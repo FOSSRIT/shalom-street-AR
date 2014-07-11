@@ -1,0 +1,3 @@
+[submodule "Modex.js"]
+	path = Modex.js
+	url = https://github.com/danShumway/Modex.js.git
