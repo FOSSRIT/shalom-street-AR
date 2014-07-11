@@ -7,45 +7,37 @@
 		<!--Hi -->
 		<link rel="stylesheet" type="text/css" href="styles.css" />
 
-		<!--Javascript-->
-		<!--Hello as well-->
-		<!--Core-->
-		<script type="text/javascript" src="components/module.js" ></script>
-		<script type="text/javascript" src="components/manager.js" ></script>
-		<script type="text/javascript" src="components/sprite.js" ></script>
-		<script type="text/javascript" src="components/characterSkeleton.js" ></script>
-		<script type="text/javascript" src="components/currentState.js" ></script>
-		<script type="text/javascript" src="components/splashScreen.js" ></script>
-		<script type="text/javascript" src="components/scenarioScreen.js" ></script>
-		<script type="text/javascript" src="components/Screen.js" ></script>
-		<script type="text/javascript" src="components/textbox.js"></script>
-		<script type="text/javascript" src="components/domElement.js"></script>
-		<script type="text/javascript" src="components/grid.js"></script>
-		<script type="text/javascript" src="components/state.js"></script>
-		<script type="text/javascript" src="components/stateManager.js"></script>
+		<!--Modex.js Core Engine-->
+		<!--Setup path variables (path to Modex.js folder from index)-->
+		<script type="text/javascript">var _modPath = 'Modex.js'</script>
+		<!--We preface our src with ../ because we're in the example folder and need to jump back one directory-->
+		<script type="text/javascript" src="Modex.js/base/index.js" ></script>
+		<script type="text/javascript" src="Modex.js/graphics/index.js" ></script>
+		<script type="text/javascript" src="Modex.js/states/index.js" ></script>
+		<script type="text/javascript" src="Modex.js/positioning/index.js" ></script>
+		<script type="text/javascript" src="Modex.js/rigging/index.js" ></script>
 
+		<!--Extensions we'll use-->
+		<script type="text/javascript" src="Modex.js/extensions/touch.js" ></script>
+		<script type="text/javascript" src="Modex.js/extensions/jsonLoader.js"></script>
 
 
 		<!--Our modules and states-->
-		<script type="text/javascript" src="components/superhero/playArea.js" ></script>
-		<script type="text/javascript" src="components/superhero/toybox.js" ></script>
-		<script type="text/javascript" src="components/superhero/toyboxTab.js" ></script>
-		<script type="text/javascript" src="components/superhero/scenarioScreen.js" ></script>
-		<script type="text/javascript" src="components/superhero/splashScreen.js" ></script>
-		<script type="text/javascript" src="components/superhero/detailedScenarioScreen.js"></script>
-		<script type="text/javascript" src="components/superhero/qualitiesScreen.js"></script>
-		<script type="text/javascript" src="components/superhero/characterBuilder(Boy).js"></script>
-		<script type="text/javascript" src="components/superhero/characterBuilder(Girl).js"></script>
-		<script type="text/javascript" src="components/superhero/powersScreen.js"></script>
-		<script type="text/javascript" src="components/superhero/characterBioScreen.js"></script>
-		<script type="text/javascript" src="components/superhero/resultsScreen.js"></script>
-		<script type="text/javascript" src="components/superhero/whyItWorkedScreen.js"></script>
-		<script type="text/javascript" src="components/superhero/superPoseScreen.js"></script>
-		<script type="text/javascript" src="components/superhero/modelSelect.js"></script>
-
-		<!--Extensions-->
-		<script type="text/javascript" src="extensions/touch.js" ></script>
-		<script type="text/javascript" src="extensions/jsonLoader.js"></script>
+		<script type="text/javascript" src="superhero/playArea.js" ></script>
+		<script type="text/javascript" src="superhero/toybox.js" ></script>
+		<script type="text/javascript" src="superhero/toyboxTab.js" ></script>
+		<script type="text/javascript" src="superhero/scenarioScreen.js" ></script>
+		<script type="text/javascript" src="superhero/splashScreen.js" ></script>
+		<script type="text/javascript" src="superhero/detailedScenarioScreen.js"></script>
+		<script type="text/javascript" src="superhero/qualitiesScreen.js"></script>
+		<script type="text/javascript" src="superhero/characterBuilder(Boy).js"></script>
+		<script type="text/javascript" src="superhero/characterBuilder(Girl).js"></script>
+		<script type="text/javascript" src="superhero/powersScreen.js"></script>
+		<script type="text/javascript" src="superhero/characterBioScreen.js"></script>
+		<script type="text/javascript" src="superhero/resultsScreen.js"></script>
+		<script type="text/javascript" src="superhero/whyItWorkedScreen.js"></script>
+		<script type="text/javascript" src="superhero/superPoseScreen.js"></script>
+		<script type="text/javascript" src="superhero/modelSelect.js"></script>
 
 		<script>
 
