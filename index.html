@@ -5,7 +5,7 @@
 
 		<!--CSS-->
 		<!--Hi -->
-		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<!--<link rel="stylesheet" type="text/css" href="styles.css" />-->
 
 		<!--Modex.js Core Engine-->
 		<!--Setup path variables (path to Modex.js folder from index)-->
@@ -18,43 +18,40 @@
 		<script type="text/javascript" src="Modex.js/rigging/index.js" ></script>
 
 		<!--Extensions we'll use-->
+		<script type="text/javascript" src="Modex.js/extensions/extensionManager.js" ></script>
 		<script type="text/javascript" src="Modex.js/extensions/touch.js" ></script>
 		<script type="text/javascript" src="Modex.js/extensions/jsonLoader.js"></script>
 
 
+		<script type="text/javascript" src="AR_Backbone/Unlockable.js"></script>
+
+
 		<!--Our modules and states-->
-		<script type="text/javascript" src="superhero/playArea.js" ></script>
-		<script type="text/javascript" src="superhero/toybox.js" ></script>
-		<script type="text/javascript" src="superhero/toyboxTab.js" ></script>
-		<script type="text/javascript" src="superhero/scenarioScreen.js" ></script>
-		<script type="text/javascript" src="superhero/splashScreen.js" ></script>
-		<script type="text/javascript" src="superhero/detailedScenarioScreen.js"></script>
-		<script type="text/javascript" src="superhero/qualitiesScreen.js"></script>
-		<script type="text/javascript" src="superhero/characterBuilder(Boy).js"></script>
-		<script type="text/javascript" src="superhero/characterBuilder(Girl).js"></script>
-		<script type="text/javascript" src="superhero/powersScreen.js"></script>
-		<script type="text/javascript" src="superhero/characterBioScreen.js"></script>
-		<script type="text/javascript" src="superhero/resultsScreen.js"></script>
-		<script type="text/javascript" src="superhero/whyItWorkedScreen.js"></script>
-		<script type="text/javascript" src="superhero/superPoseScreen.js"></script>
-		<script type="text/javascript" src="superhero/modelSelect.js"></script>
 
 		<script>
 
-			var canvas, ctx, manager, playArea;
-			var bioSubmission;
-			var superhero = {
-				"virtues":[],
-				"skeleton":undefined,
-				"powers":[]
-			}
+			var app = { };
+			var main;
+			var templates = {};
 
 
 			function onLoad(){
 
 
-				//Grab the Canvas.
+				//Pass in our templates.
+				templates = {};
+				templates.menu_item_template = document.getElementById("menu_item_template");
 
+				//Main
+				main = document.getElementById("main");
+				var canvas = document.getElementById('tempNeed');
+				manager = Manager(canvas, canvas.getContext('2d'), 1);
+
+				var item = Unlockable(templates.menu_item_template, main, 5);
+				manager.addModule(item);
+
+				//Grab the Canvas.
+				/*
 				bioSubmission = DomWrapper(document.getElementById("bioSubmitBox"));
 				canvas = document.getElementById("main");
 				ctx = canvas.getContext("2d");
@@ -81,28 +78,9 @@
 				//currentState = CurrentState(0, 0, 1920, 1080);
 				currentState = StateManager(SplashScreen({"superhero":superhero}));
 				manager.addModule(currentState);
+				*/
 
 			}
-
-
-
-				function loadErrorScreen(){
-					sc = new SplashScreen();
-					currentState.addModule(sc);
-					//Splash Image
-					splashImage = Sprite(0,0,1920,1080, "images/dev/error.png");
-					sc.addModule(splashImage);
-					
-					//Buttons
-					continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
-					sc.addModule(continueButton);
-					
-					//Events
-					continueButton.addEvent("mousedown", function(_clipBoard){
-						manager.removeModule(sc);
-						switchState("splashScreen");
-					},false);
-				}
 
 		window.onload = onLoad;
 		</script>
@@ -120,8 +98,19 @@
 		for the canvas. Not sure if canvas properties itself, or 
 		Possibly due to the fact that the canvas was made full screen 
 		by the "onLoad" script at the top of this page.-->
-		<textarea id="bioSubmitBox" style="resize: none; visibility:hidden; position:absolute; left:10px; top:10px; width:400px; height:400px">Enter your superhero's bio here!</textarea> 
-		<canvas id="main" width="1920px" height="1080px"></canvas>
+		<!--<textarea id="bioSubmitBox" style="resize: none; visibility:hidden; position:absolute; left:10px; top:10px; width:400px; height:400px">Enter your superhero's bio here!</textarea> -->
+		<canvas id="tempNeed" width="100px" height="100px"></canvas>
+		<div id="main">
+			
+
+		</div>
+
+		<div id="templates" style="display:none;">
+			<div id="menu_item_template">
+				<span>Hello hello hello!  </span><br>
+				<span>What's up?</span>
+			</div>
+		</div>
 	</body>
 
 </html>
