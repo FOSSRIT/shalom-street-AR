@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title id='title'>Toy Building App</title>
+
+		<script>
+			respondToSizingMessage = function(e) {
+			    // e.data is the string sent by the origin with postMessage.
+			    if(e.data == 'sizing?') {
+			    	console.log('hey');
+			      e.source.postMessage(document.body.scrollHeight+'px', '*');
+			    }
+			}
+			// we have to listen for 'message'
+			window.addEventListener('message', respondToSizingMessage, false);
+		</script>
+
+		<style>
+			body {
+				width:100px;
+				height:700px;
+			}
+		</style>
+	</head>
+
+
+
+	<!--Main app-->
+	<body>
+		Here is some text that should be loaded into stuff.
+	</body>
+
+</html>

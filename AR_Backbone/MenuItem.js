@@ -1,5 +1,5 @@
 //A menu item that is unlocked.
-function Unlockable(template, destination, id){
+function MenuItem(template, destination, id){
 	var base = Module(0, 0, 0, 0);
 	var toReturn = base.interface;
 	toReturn.id = id;
@@ -22,14 +22,15 @@ function Unlockable(template, destination, id){
 	//And just capture events at the module and handle them as events.
 	//It's also, honestly, more in the spirit of a modular approach, since we don't need to worry about
 	//passing mouse clicks through the entire application all the time.  It just works.
-	element.addEventListener("click", function(e){
-		base.handleEvent("selected", e);
-	}, true);
+	
+	//Add touch events.
+	Touch.DOMCollisions(base);
 	//And add the event.
-	base.addEvent("selected", function(_clipBoard){
+	base.addEvent("mousedown", function(_clipBoard){
 		//Navigate to the proper place.
-		if(_clipBoard.unlocked){
+		if(_clipBoard.unlocked){ //ToDo: think about if this makes sense.
 			console.log(toReturn.id);
+			e.ToFire = ["Navigate"];
 		} else { console.log("locked"); }
 	}, false);
 

@@ -1,10 +1,9 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title id='title'>Toy Building App</title>
+		<title id='title'>AR App</title>
 
 		<!--CSS-->
-		<!--Hi -->
 		<!--<link rel="stylesheet" type="text/css" href="styles.css" />-->
 
 		<!--Modex.js Core Engine-->
@@ -15,16 +14,17 @@
 		<script type="text/javascript" src="Modex.js/graphics/index.js" ></script>
 		<script type="text/javascript" src="Modex.js/states/index.js" ></script>
 		<script type="text/javascript" src="Modex.js/positioning/index.js" ></script>
-		<script type="text/javascript" src="Modex.js/rigging/index.js" ></script>
 
 		<!--Extensions we'll use-->
 		<script type="text/javascript" src="Modex.js/extensions/extensionManager.js" ></script>
 		<script type="text/javascript" src="Modex.js/extensions/touch.js" ></script>
 		<script type="text/javascript" src="Modex.js/extensions/jsonLoader.js"></script>
+		<script type="text/javascript" src="Modex.js/extensions/jsonBuilder.js"></script>
 
 
-		<script type="text/javascript" src="AR_Backbone/Unlockable.js"></script>
-
+		<script type="text/javascript" src="AR_Backbone/MenuItem.js"></script>
+		<script type="text/javascript" src="AR_Backbone/Browser.js"></script>
+		<script type="text/javascript" src="AR_Backbone/Menu.js"></script>
 
 		<!--Our modules and states-->
 
@@ -38,17 +38,23 @@
 			function onLoad(){
 
 
+				//make our app's main repository of information.
+				info = {}
+
 				//Pass in our templates.
-				templates = {};
-				templates.menu_item_template = document.getElementById("menu_item_template");
+				info.templates = {};
+				info.templates.menu_item_template = document.getElementById("menu_item_template");
+				info.templates.menu_template = document.getElementById("menu_template");
 
 				//Main
-				main = document.getElementById("main");
+				info.main = document.getElementById("main");
 				var canvas = document.getElementById('tempNeed');
 				manager = Manager(canvas, canvas.getContext('2d'), 1);
 
-				var item = Unlockable(templates.menu_item_template, main, 5);
-				manager.addModule(item);
+				//var item = MenuItem(templates.menu_item_template, main, 5);
+				var browser = Browser(info);
+
+				//manager.addModule(item);
 
 				//Grab the Canvas.
 				/*
@@ -83,8 +89,67 @@
 			}
 
 		window.onload = onLoad;
+
+
+
+		function resizeIFrame(id){
+			var newheight=document.getElementById(id).contentWindow.postMessage('sizing?', '*');
+
+		    //var newwidth=document.getElementById(id).contentWindow.document .body.scrollWidth;
+
+		   
+		  	//document.getElementById(id).style.getElementById(id).width= (newwidth) + "px";
+		}
+
+		handleSizingResponse = function(e) {
+		  	document.getElementById('me').style.height= e.data;
+		  	console.log(e.data);
+		}
+
+		window.addEventListener('message', handleSizingResponse, false);
+
 		</script>
+
+
+
+		<style>
+
+			body {
+				overflow-right:hidden;
+				overflow-left:hidden;
+			}
+
+			iframe {
+				border:none;
+				width:100%;
+			}
+
+			.menu {
+				width:500px;
+				height:700px;
+				background-color:green;
+			}
+
+			.menu .title {
+				width:100%;
+				height:100px;
+				background-color:gray;
+			}
+
+			.menu .title .title_tag {
+				float:left;
+				font-size:15pt;
+			}
+
+			.menu .title .camera_tag {
+				float:right;
+				width:150px;
+				height:150px;
+				background-color:red;
+			}
+		</style>
 	</head>
+
 
 
 
@@ -93,23 +158,39 @@
 		<!--Canvas is width and height of the screen.-->
 		<!--We'll need to set this stuff up so it goes full screen I guess.-->
 		
-		<!--I don't really understand how the width and height is functioning 
-		below on the canvas in line style. It seems to be acting as a resolution 
-		for the canvas. Not sure if canvas properties itself, or 
-		Possibly due to the fact that the canvas was made full screen 
-		by the "onLoad" script at the top of this page.-->
 		<!--<textarea id="bioSubmitBox" style="resize: none; visibility:hidden; position:absolute; left:10px; top:10px; width:400px; height:400px">Enter your superhero's bio here!</textarea> -->
-		<canvas id="tempNeed" width="100px" height="100px"></canvas>
+		<canvas id="tempNeed" width="100px" height="100px" style="display:none;"></canvas>
 		<div id="main">
+
+		<iframe id="me" src="Data/2014-2015/myContent.html" onLoad="resizeIFrame('me')"></iframe>
 			
 
 		</div>
 
 		<div id="templates" style="display:none;">
-			<div id="menu_item_template">
-				<span>Hello hello hello!  </span><br>
-				<span>What's up?</span>
-			</div>
+
+			<!--Menu-->
+				<!-- Menu -->
+				<div id="menu_template" class="menu">
+					<!--Upper bar-->
+					<div class="title">
+						<!--Required field-->
+						<div class="title_tag">A title will go here.</div> 
+						<!--Required filed-->
+						<div class="camera_tag"></div>
+					</div>
+
+				</div>
+
+				<!-- Menu Items -->
+				<div id="menu_item_template" class="menu_item">
+					<span>Hello hello hello!  </span><br>
+					<span>What's up?</span>
+				</div>
+
+			<!--Browser-->
+
+
 		</div>
 	</body>
 
