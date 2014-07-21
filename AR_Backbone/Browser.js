@@ -35,6 +35,6 @@ function Browser(_info){
 	toReturn.init = _init;
 	toReturn.reinsert = _reinsert;
 	_init();
-	console.log('state is browser');
+	console.log('browser created');
 	return toReturn;
 }

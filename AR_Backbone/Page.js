@@ -18,10 +18,6 @@ function Page(parent, templates, json){
 		base.addModule(inner_parent);
 
 		Touch.DOMCollisions(inner_parent, inner_parent.getDom());
- 		inner_parent.addEvent("mousedown", function(_clipBoard){
- 			//console.log('got click');
- 			//_clipBoard.ToFire = ["ello_Chap"];
- 		}, false);
 
 
 		_addContent("Data/2014-2015/myContent.html");
@@ -34,9 +30,11 @@ function Page(parent, templates, json){
 
 		var forward_button = DomWrapper(inner_parent.getDom().getElementsByClassName("forward_tag")[0]);
 
+
+		base.setRemove(function(){ console.log('removing'); parent.removeChild(inner_parent.getDom()); });
+
 	}
 
-	base.setRemove(function(){ parent.removeChild(inner_parent); })
 
 	function _addContent(url){
 		var frame = document.createElement("IFRAME");
@@ -45,8 +43,6 @@ function Page(parent, templates, json){
 	}
 
 	//Add in back button.
-
-	console.log('something happened');
 	_init();
 	return toReturn;
 

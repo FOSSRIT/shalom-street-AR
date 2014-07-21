@@ -62,8 +62,6 @@
 
 				currentState = StateManager(Viewer(info));
 				Touch.DOMCollisions(currentState, document);
-				currentState.addEvent("mousedown", function(_clipBoard){ console.log('you scum'); }, false);
-				currentState.addEvent("changeState", function(_clipBoard){ console.log('yep, I am a scum.'); }, false);
 				manager.addModule(currentState);
 
 			}

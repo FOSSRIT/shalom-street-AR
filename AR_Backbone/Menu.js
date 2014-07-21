@@ -34,10 +34,12 @@ function Menu(parent, templates){
  		for(var j in data.sections.mySection.unlockables){
  			_addSection();
  		}
+
+
+ 		base.setRemove(function(){ console.log('removing'); parent.removeChild(inner_parent.getDom()); })
+
+ 		console.log('Menu created from json');
  	}
-
-
- 	base.setRemove(function(){ parent.removeChild(inner_parent); })
 
 
 	//Adds a new section to the menu, and propogates it with other stuff.

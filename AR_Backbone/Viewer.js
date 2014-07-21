@@ -16,9 +16,6 @@ function Viewer(_info){
 	//base.addEvent("mousedown", function(_clipBoard){ console.log('hello'); }, false);
 	toReturn.addEvent("mousedown", base.changeState("Browser", _info), false);
 
-	base.setRemove(function(){ _info.main.removeChild() })
-
-	console.log('hello');
 
 	return toReturn;
 
