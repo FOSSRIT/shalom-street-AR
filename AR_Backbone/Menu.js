@@ -14,12 +14,21 @@ function Menu(parent, templates){
  	function _init(data){ //Make a new menu, and set it up to be propogated with children.
  		inner_parent = DomWrapper(templates.menu_template.cloneNode(true));
  		parent.appendChild(inner_parent.getDom());
+ 		base.addModule(inner_parent);
 
 
  		//-------------Fill out upper title area--------------------------
  		var elementsThing = (inner_parent.getDom()).getElementsByClassName("title_tag")[0].innerHTML = data.title;
  		//Set camera.
  		var camera = DomWrapper(inner_parent.getDom().getElementsByClassName("camera_tag")[0]);
+ 		base.addModule(camera);
+
+ 		//Set camera events.
+ 		Touch.DOMCollisions(camera, camera.getDom());
+ 		camera.addEvent("mousedown", function(_clipBoard){
+ 			console.log('got click');
+ 			_clipBoard.ToFire = ["click_camera"];
+ 		}, false);
 		
 
  		for(var j in data.sections.mySection.unlockables){
@@ -28,6 +37,7 @@ function Menu(parent, templates){
  	}
 
 
+ 	base.setRemove(function(){ parent.removeChild(inner_parent); })
 
 
 	//Adds a new section to the menu, and propogates it with other stuff.

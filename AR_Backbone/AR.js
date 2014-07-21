@@ -9,6 +9,7 @@ function AR(_info){
 	//--Load an ID module.
 
 	//when you get a trigger event from the camera module, pass it to the trigger data.
+	//And get the result.
 
 
 	//

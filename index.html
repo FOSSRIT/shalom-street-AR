@@ -5,6 +5,8 @@
 
 		<!--CSS-->
 		<!--<link rel="stylesheet" type="text/css" href="styles.css" />-->
+		<link rel="stylesheet" href="Styles/base.css" type="text/css" media="screen" />
+
 
 		<!--Modex.js Core Engine-->
 		<!--Setup path variables (path to Modex.js folder from index)-->
@@ -25,6 +27,8 @@
 		<script type="text/javascript" src="AR_Backbone/MenuItem.js"></script>
 		<script type="text/javascript" src="AR_Backbone/Browser.js"></script>
 		<script type="text/javascript" src="AR_Backbone/Menu.js"></script>
+		<script type="text/javascript" src="AR_Backbone/Viewer.js"></script>
+		<script type="text/javascript" src="AR_Backbone/Page.js"></script>
 
 		<!--Our modules and states-->
 
@@ -45,6 +49,8 @@
 				info.templates = {};
 				info.templates.menu_item_template = document.getElementById("menu_item_template");
 				info.templates.menu_template = document.getElementById("menu_template");
+				info.templates.viewer_template = document.getElementById("viewer_template");
+				info.templates.viewer_content_template = document.getElementById("viewer_content_template");
 
 				//Main
 				info.main = document.getElementById("main");
@@ -52,39 +58,13 @@
 				manager = Manager(canvas, canvas.getContext('2d'), 1);
 
 				//var item = MenuItem(templates.menu_item_template, main, 5);
-				var browser = Browser(info);
+				//var browser = Browser(info);
 
-				//manager.addModule(item);
-
-				//Grab the Canvas.
-				/*
-				bioSubmission = DomWrapper(document.getElementById("bioSubmitBox"));
-				canvas = document.getElementById("main");
-				ctx = canvas.getContext("2d");
-				//Make the canvas full screen
-
-				//Size the canvas as far as we can.
-				var wantedHeightProp = window.innerHeight / 1080;
-				var wantedWidthProp = window.innerWidth / 1920;
-				var scale = (wantedHeightProp < wantedWidthProp)? wantedHeightProp : wantedWidthProp;
-
-				canvas.style.height = 1080 * scale;
-				canvas.style.width = 1920 * scale;
-
-				//create and add elements
-				console.log(1/scale);
-				manager = Manager(canvas, ctx, 1/scale);
-				
-
-				manager.setLoad(function(){
-					manager.draw();
-				});
-				
-				
-				//currentState = CurrentState(0, 0, 1920, 1080);
-				currentState = StateManager(SplashScreen({"superhero":superhero}));
+				currentState = StateManager(Viewer(info));
+				Touch.DOMCollisions(currentState, document);
+				currentState.addEvent("mousedown", function(_clipBoard){ console.log('you scum'); }, false);
+				currentState.addEvent("changeState", function(_clipBoard){ console.log('yep, I am a scum.'); }, false);
 				manager.addModule(currentState);
-				*/
 
 			}
 
@@ -109,45 +89,6 @@
 		window.addEventListener('message', handleSizingResponse, false);
 
 		</script>
-
-
-
-		<style>
-
-			body {
-				overflow-right:hidden;
-				overflow-left:hidden;
-			}
-
-			iframe {
-				border:none;
-				width:100%;
-			}
-
-			.menu {
-				width:500px;
-				height:700px;
-				background-color:green;
-			}
-
-			.menu .title {
-				width:100%;
-				height:100px;
-				background-color:gray;
-			}
-
-			.menu .title .title_tag {
-				float:left;
-				font-size:15pt;
-			}
-
-			.menu .title .camera_tag {
-				float:right;
-				width:150px;
-				height:150px;
-				background-color:red;
-			}
-		</style>
 	</head>
 
 
@@ -162,7 +103,7 @@
 		<canvas id="tempNeed" width="100px" height="100px" style="display:none;"></canvas>
 		<div id="main">
 
-		<iframe id="me" src="Data/2014-2015/myContent.html" onLoad="resizeIFrame('me')"></iframe>
+		<!--<iframe id="me" src="Data/2014-2015/myContent.html" onLoad="resizeIFrame('me')"></iframe>-->
 			
 
 		</div>
@@ -188,8 +129,24 @@
 					<span>What's up?</span>
 				</div>
 
-			<!--Browser-->
+				<div id="menu_popup_template" class="menu_popup">
+					A message will go here.
+				</div>
 
+			<!--Viewer-->
+
+				<div id="viewer_template">
+
+					<div class="viewer_tag">
+
+					</div>
+
+					<div class="navigation">
+						<div class="back_tag"></div>
+						<div class="home_tag"></div>
+						<div class="forward_tag"></div>
+					</div>
+				</div>
 
 		</div>
 	</body>

@@ -8,7 +8,7 @@ function Browser(_info){
 
 	function _init(){	
 
-		var menu = Menu(_info.main, _info.templates);
+		var menu = Menu(_info.main, _info.templates, {});//Menu(_info.main, _info.templates);
 		base.addModule(menu);
 	}
 
@@ -24,10 +24,17 @@ function Browser(_info){
 		}
 	}
 
+	Touch.DOMCollisions(toReturn, _info.main);
+	/*base.addEvent("click_camera", function(_clipBoard){
+		console.log('caught click_camera');
+	}, false);*/
+	base.addEvent("click_camera", base.changeState("Viewer", _info), false);
+
 
 	//
 	toReturn.init = _init;
 	toReturn.reinsert = _reinsert;
 	_init();
+	console.log('state is browser');
 	return toReturn;
 }
