@@ -8,23 +8,23 @@ jsonLoader.result = {
 
 		//The name of a section can be anything you like.
 		//Sections mark divisions within the content viewer
-		"mySection" : {
+		"Intro Section" : {
 			
 			//Do not change this name.
 			"unlockables": {
 
 				//The name of an unlockable can be anything you like.
-				"myUnlockable1": {
+				"Unlock 1": {
 					//The ID of the trigger that unlocks this content.
 					"id": 0,
 					//The URL of the HTML page or section it unlocks.
 					"url": "Data/2014-2015/myContent.html",
 				},
 
-				"myUnlockable2": {
+				"Unlock 2": {
 					"id": 1,
 					"url": "Data/2014-2015/myContent.html",
-				}
+				},
 			},
 		},
 

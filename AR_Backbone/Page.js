@@ -30,7 +30,6 @@ function Page(parent, templates, json){
 
 		var forward_button = DomWrapper(inner_parent.getDom().getElementsByClassName("forward_tag")[0]);
 
-
 		base.setRemove(function(){ console.log('removing'); parent.removeChild(inner_parent.getDom()); });
 
 	}
@@ -40,6 +39,14 @@ function Page(parent, templates, json){
 		var frame = document.createElement("IFRAME");
 		frame.setAttribute("src", url);
 		content_parent.appendChild(frame);
+
+		frame.onload = function(){
+
+		}
+
+		content_parent.addEventListener('message', function(){
+
+		});
 	}
 
 	//Add in back button.

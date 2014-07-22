@@ -15,7 +15,6 @@ function Viewer(_info){
 
 	//base.addEvent("mousedown", function(_clipBoard){ console.log('hello'); }, false);
 	toReturn.addEvent("mousedown", function(_clipBoard) {
-		console.log('got a click');
 		(base.changeState("Browser", _info))(_clipBoard);
 	} , false);
 

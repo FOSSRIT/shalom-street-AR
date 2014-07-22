@@ -6,9 +6,9 @@
 		<script>
 			respondToSizingMessage = function(e) {
 			    // e.data is the string sent by the origin with postMessage.
-			    if(e.data == 'sizing?') {
-			    	console.log('hey');
-			      e.source.postMessage(document.body.scrollHeight+'px', '*');
+			    var message = e.data.split(':');
+			    if(message[1] == 'size?') {
+			      e.source.postMessage(message[0]':size:' + document.body.scrollHeight + 'px', '*');
 			    }
 			}
 			// we have to listen for 'message'
