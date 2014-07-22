@@ -25,10 +25,9 @@ function Browser(_info){
 	}
 
 	Touch.DOMCollisions(toReturn, _info.main);
-	/*base.addEvent("click_camera", function(_clipBoard){
-		console.log('caught click_camera');
-	}, false);*/
-	base.addEvent("click_camera", base.changeState("Viewer", _info), false);
+	base.addEvent("click_camera", function(_clipBoard) {
+		(base.changeState("Viewer", _info))(_clipBoard); 
+	}, false);
 
 
 	//

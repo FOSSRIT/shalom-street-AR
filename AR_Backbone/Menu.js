@@ -26,7 +26,6 @@ function Menu(parent, templates){
  		//Set camera events.
  		Touch.DOMCollisions(camera, camera.getDom());
  		camera.addEvent("mousedown", function(_clipBoard){
- 			console.log('got click');
  			_clipBoard.ToFire = ["click_camera"];
  		}, false);
 		
@@ -35,10 +34,7 @@ function Menu(parent, templates){
  			_addSection();
  		}
 
-
- 		base.setRemove(function(){ console.log('removing'); parent.removeChild(inner_parent.getDom()); })
-
- 		console.log('Menu created from json');
+ 		base.setRemove(function(){ parent.removeChild(inner_parent.getDom()); })
  	}
 
 

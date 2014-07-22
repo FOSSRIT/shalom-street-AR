@@ -34,43 +34,78 @@
 
 		<script>
 
-			var app = { };
 			var main;
 			var templates = {};
 
+			var app = {
+			    // Application Constructor
+			    initialize: function() {
+			        this.bindEvents();
 
-			function onLoad(){
+			    },
+			    // Bind Event Listeners
+			    //
+			    // Bind any events that are required on startup. Common events are:
+			    // 'load', 'deviceready', 'offline', and 'online'.
+			    bindEvents: function() {
+			        document.addEventListener('deviceready', this.onDeviceReady, false);
+			        window.onload = this.onDeviceReady;
+			    },
+
+			    // deviceready Event Handler
+			    //
+			    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+			    // function, we must explicity call 'app.receivedEvent(...);'
+			    onDeviceReady: function() {
+
+			        //... some code would go here...
+			        //app.receivedEvent('deviceready');
+			        //make our app's main repository of information.
+					var info = {}
+
+					//Pass in our templates.
+					info.templates = {};
+					info.templates.menu_item_template = document.getElementById("menu_item_template");
+					info.templates.menu_template = document.getElementById("menu_template");
+					info.templates.viewer_template = document.getElementById("viewer_template");
+					info.templates.viewer_content_template = document.getElementById("viewer_content_template");
+
+					//Main
+					info.main = document.getElementById("main");
+					var canvas = document.getElementById('tempNeed');
+					manager = Manager(canvas, canvas.getContext('2d'), 1);
+
+					//var item = MenuItem(templates.menu_item_template, main, 5);
+					//var browser = Browser(info);
+
+					currentState = StateManager(Viewer(info));
+					Touch.DOMCollisions(currentState, document);
+					manager.addModule(currentState);
 
 
-				//make our app's main repository of information.
-				info = {}
+			    },
 
-				//Pass in our templates.
-				info.templates = {};
-				info.templates.menu_item_template = document.getElementById("menu_item_template");
-				info.templates.menu_template = document.getElementById("menu_template");
-				info.templates.viewer_template = document.getElementById("viewer_template");
-				info.templates.viewer_content_template = document.getElementById("viewer_content_template");
-
-				//Main
-				info.main = document.getElementById("main");
-				var canvas = document.getElementById('tempNeed');
-				manager = Manager(canvas, canvas.getContext('2d'), 1);
-
-				//var item = MenuItem(templates.menu_item_template, main, 5);
-				//var browser = Browser(info);
-
-				currentState = StateManager(Viewer(info));
-				Touch.DOMCollisions(currentState, document);
-				manager.addModule(currentState);
-
-			}
-
-		window.onload = onLoad;
+			    onDeviceNotSupported: function() {
+			        //If the device isn't supported.
+			        alert('device not supported');
+			    },
 
 
+			    // Update DOM on a Received Event
+			    receivedEvent: function(id) {
+			        var parentElement = document.getElementById(id);
+			        var listeningElement = parentElement.querySelector('.listening');
+			        var receivedElement = parentElement.querySelector('.received');
 
-		function resizeIFrame(id){
+			        listeningElement.setAttribute('style', 'display:none;');
+			        receivedElement.setAttribute('style', 'display:block;');
+
+			        console.log('Received Event: ' + id);
+			    }
+			};
+
+
+		/*function resizeIFrame(id){
 			var newheight=document.getElementById(id).contentWindow.postMessage('sizing?', '*');
 
 		    //var newwidth=document.getElementById(id).contentWindow.document .body.scrollWidth;
@@ -84,8 +119,9 @@
 		  	console.log(e.data);
 		}
 
-		window.addEventListener('message', handleSizingResponse, false);
+		window.addEventListener('message', handleSizingResponse, false);*/
 
+		app.initialize();
 		</script>
 	</head>
 

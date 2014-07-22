@@ -5,6 +5,14 @@ function AR(_info){
 	//
 
 	//---Load a Camera module
+	var pictureSource = navigator.camera.PictureSourceType;
+    var destinationType = navigator.camera.DestinationType;
+    alert(this.onSuccess);
+    navigator.camera.getPicture(function(){ alert('good'); }, function(){ alert('bad'); }, { quality: 50, destinationType: Camera.DestinationType.DATA_URL });
+
+	camera.getPicture(_onSuccess , _onError, );
+
+	function _onError() { alert('hi error'); }
 
 	//--Load an ID module.
 

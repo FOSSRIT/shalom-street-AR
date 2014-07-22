@@ -14,7 +14,10 @@ function Viewer(_info){
 	base.addModule(page);
 
 	//base.addEvent("mousedown", function(_clipBoard){ console.log('hello'); }, false);
-	toReturn.addEvent("mousedown", base.changeState("Browser", _info), false);
+	toReturn.addEvent("mousedown", function(_clipBoard) {
+		console.log('got a click');
+		(base.changeState("Browser", _info))(_clipBoard);
+	} , false);
 
 
 	return toReturn;
