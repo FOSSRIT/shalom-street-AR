@@ -3,6 +3,9 @@ function Page(parent, templates, json){
 	var toReturn = base.interface; //
 	toReturn.type = "Page";
 
+
+
+
 	/*
 	var frame = document.createElement("IFRAME");
 	frame.setAttribute("src", "Data/2014-2015/myContent.html");
@@ -12,6 +15,18 @@ function Page(parent, templates, json){
 	var inner_parent;
 	var content_parent;
 	function _init(data){
+
+		//addEventListener('message', - There are better ways to do this.
+		window.onmessage = function(e){
+			var message = e.data.split(':');
+		    if(message[1] == 'size') {
+		    	var dom = document.getElementById("_iframe"+message[0]);
+		    	dom.style.height = message[2];
+		    	console.log(message[2]);
+		    }
+		};
+
+
 		inner_parent = DomWrapper(templates.viewer_template.cloneNode(true));
 		content_parent = inner_parent.getDom().getElementsByClassName("viewer_tag")[0];
 		parent.appendChild(inner_parent.getDom());
@@ -20,9 +35,9 @@ function Page(parent, templates, json){
 		Touch.DOMCollisions(inner_parent, inner_parent.getDom());
 
 
-		_addContent("Data/2014-2015/myContent.html");
-		_addContent("Data/2014-2015/myContent.html");
-		_addContent("Data/2014-2015/myContent.html");
+		_addContent("Data/2014-2015/myContent.html", "0");
+		_addContent("Data/2014-2015/myContent.html", "1");
+		_addContent("Data/2014-2015/myContent.html", "2");
 
 
 		var back_button = DomWrapper(inner_parent.getDom().getElementsByClassName("back_tag")[0]);
@@ -35,18 +50,15 @@ function Page(parent, templates, json){
 	}
 
 
-	function _addContent(url){
+	function _addContent(url, id){
 		var frame = document.createElement("IFRAME");
 		frame.setAttribute("src", url);
+		frame.setAttribute("id", "_iframe"+id);
 		content_parent.appendChild(frame);
 
 		frame.onload = function(){
-
+			frame.contentWindow.postMessage(id + ':size?', '*');
 		}
-
-		content_parent.addEventListener('message', function(){
-
-		});
 	}
 
 	//Add in back button.

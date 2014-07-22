@@ -78,7 +78,7 @@
 					//var item = MenuItem(templates.menu_item_template, main, 5);
 					//var browser = Browser(info);
 
-					currentState = StateManager(Viewer(info));
+					currentState = StateManager(Browser(info));
 					Touch.DOMCollisions(currentState, document);
 					manager.addModule(currentState);
 
@@ -159,8 +159,10 @@
 
 				<!-- Menu Items -->
 				<div id="menu_item_template" class="menu_item">
-					<span>Hello hello hello!  </span><br>
-					<span>What's up?</span>
+					<div class="section">
+						<div class="title_tag">Section Title Goes Here</div>
+					</div>
+					<!--<div></div> Maybe not show sections?  Maybe just tell the percent of that section you've unlocked?-->
 				</div>
 
 				<div id="menu_popup_template" class="menu_popup">

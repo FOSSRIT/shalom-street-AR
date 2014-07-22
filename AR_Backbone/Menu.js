@@ -30,11 +30,14 @@ function Menu(parent, templates){
  		}, false);
 		
 
- 		for(var j in data.sections.mySection.unlockables){
- 			_addSection();
- 		}
+ 		//For each section
+ 		for(var s in data.sections){
+	 		for(var j in data.sections[s].unlockables){
+	 			_addSection();
+	 		}
+	 	}
 
- 		base.setRemove(function(){ parent.removeChild(inner_parent.getDom()); })
+ 		base.setRemove(function(){ parent.removeChild(inner_parent.getDom()); });
  	}
 
 

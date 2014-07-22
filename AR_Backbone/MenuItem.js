@@ -1,5 +1,5 @@
 //A menu item that is unlocked.
-function MenuItem(template, destination, id){
+function MenuItem(parent, template, id){
 	var base = Module(0, 0, 0, 0);
 	var toReturn = base.interface;
 	toReturn.id = id;

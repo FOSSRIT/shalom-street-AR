@@ -8,7 +8,7 @@
 			    // e.data is the string sent by the origin with postMessage.
 			    var message = e.data.split(':');
 			    if(message[1] == 'size?') {
-			      e.source.postMessage(message[0]':size:' + document.body.scrollHeight + 'px', '*');
+			    	e.source.postMessage(message[0] + ':size:' + document.body.scrollHeight + 'px', '*');
 			    }
 			}
 			// we have to listen for 'message'
@@ -18,7 +18,7 @@
 		<style>
 			body {
 				width:100px;
-				height:700px;
+				height:200px;
 			}
 		</style>
 	</head>
