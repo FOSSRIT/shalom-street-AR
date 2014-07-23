@@ -8,7 +8,7 @@ jsonLoader.result = {
 
 		//The name of a section can be anything you like.
 		//Sections mark divisions within the content viewer
-		"Intro Section" : {
+		"Cave" : {
 			
 			//Do not change this name.
 			"unlockables": {
