@@ -1,0 +1,2 @@
+C:\Users\shumw_000\Documents\Shalom Street\AR\Phonegap_Build\ShalomStreetAR\platforms\android\ant-build\AndroidManifest.xml : \
+C:\Users\shumw_000\Documents\Shalom Street\AR\Phonegap_Build\ShalomStreetAR\platforms\android\AndroidManifest.xml \

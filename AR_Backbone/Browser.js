@@ -26,7 +26,7 @@ function Browser(_info){
 
 	Touch.DOMCollisions(toReturn, _info.main);
 	base.addEvent("click_camera", function(_clipBoard) {
-		(base.changeState("Viewer", _info))(_clipBoard); 
+		(base.changeState("AR", _info))(_clipBoard); 
 	}, false);
 
 

@@ -12,7 +12,9 @@ function AR(_info){
 
 	camera.getPicture(_onSuccess , _onError, );
 
-	function _onError() { alert('hi error'); }
+	function _onError() { alert('hi error'); };
+
+	function _onSuccess() { base.handleEvent("triggerGet", {}); };
 
 	//--Load an ID module.
 

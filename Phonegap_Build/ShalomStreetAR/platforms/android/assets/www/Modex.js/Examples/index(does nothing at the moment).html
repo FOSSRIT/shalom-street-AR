@@ -1,0 +1,125 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title id='title'>Toy Building App</title>
+
+		<!--CSS-->
+		<!--Hi -->
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+
+		<!--Modex.js Core Engine-->
+		<!--We preface our src with ../ because we're in the example folder and need to jump back one directory-->
+		<script type="text/javascript" src="../base/index.js" ></script>
+		<script type="text/javascript" src="../graphics/index.js" ></script>
+		<script type="text/javascript" src="../states/index.js" ></script>
+		<script type="text/javascript" src="../positioning/index.js" ></script>
+		<script type="text/javascript" src="../rigging/index.js" ></script>
+
+		<!--Extensions we'll use-->
+		<script type="text/javascript" src="../extensions/touch.js" ></script>
+		<script type="text/javascript" src="../extensions/jsonLoader.js"></script>
+
+
+		<!--Our modules and states-->
+		<script type="text/javascript" src="components/superhero/playArea.js" ></script>
+		<script type="text/javascript" src="components/superhero/toybox.js" ></script>
+		<script type="text/javascript" src="components/superhero/toyboxTab.js" ></script>
+		<script type="text/javascript" src="components/superhero/scenarioScreen.js" ></script>
+		<script type="text/javascript" src="components/superhero/splashScreen.js" ></script>
+		<script type="text/javascript" src="components/superhero/detailedScenarioScreen.js"></script>
+		<script type="text/javascript" src="components/superhero/qualitiesScreen.js"></script>
+		<script type="text/javascript" src="components/superhero/characterBuilder(Boy).js"></script>
+		<script type="text/javascript" src="components/superhero/characterBuilder(Girl).js"></script>
+		<script type="text/javascript" src="components/superhero/powersScreen.js"></script>
+		<script type="text/javascript" src="components/superhero/characterBioScreen.js"></script>
+		<script type="text/javascript" src="components/superhero/resultsScreen.js"></script>
+		<script type="text/javascript" src="components/superhero/whyItWorkedScreen.js"></script>
+		<script type="text/javascript" src="components/superhero/superPoseScreen.js"></script>
+		<script type="text/javascript" src="components/superhero/modelSelect.js"></script>
+
+		<script>
+
+			var canvas, ctx, manager, playArea;
+			var bioSubmission;
+			var superhero = {
+				"virtues":[],
+				"skeleton":undefined,
+				"powers":[]
+			}
+
+
+			function onLoad(){
+
+
+				//Grab the Canvas.
+
+				bioSubmission = DomWrapper(document.getElementById("bioSubmitBox"));
+				canvas = document.getElementById("main");
+				ctx = canvas.getContext("2d");
+				//Make the canvas full screen
+
+				//Size the canvas as far as we can.
+				var wantedHeightProp = window.innerHeight / 1080;
+				var wantedWidthProp = window.innerWidth / 1920;
+				var scale = (wantedHeightProp < wantedWidthProp)? wantedHeightProp : wantedWidthProp;
+
+				canvas.style.height = 1080 * scale;
+				canvas.style.width = 1920 * scale;
+
+				//create and add elements
+				console.log(1/scale);
+				manager = Manager(canvas, ctx, 1/scale);
+				
+
+				manager.setLoad(function(){
+					manager.draw();
+				});
+				
+				
+				//currentState = CurrentState(0, 0, 1920, 1080);
+				currentState = StateManager(SplashScreen({"superhero":superhero}));
+				manager.addModule(currentState);
+
+			}
+
+
+
+				function loadErrorScreen(){
+					sc = new SplashScreen();
+					currentState.addModule(sc);
+					//Splash Image
+					splashImage = Sprite(0,0,1920,1080, "images/dev/error.png");
+					sc.addModule(splashImage);
+					
+					//Buttons
+					continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+					sc.addModule(continueButton);
+					
+					//Events
+					continueButton.addEvent("mousedown", function(_clipBoard){
+						manager.removeModule(sc);
+						switchState("splashScreen");
+					},false);
+				}
+
+		window.onload = onLoad;
+		</script>
+	</head>
+
+
+
+	<!--Main app-->
+	<body>
+		<!--Canvas is width and height of the screen.-->
+		<!--We'll need to set this stuff up so it goes full screen I guess.-->
+		
+		<!--I don't really understand how the width and height is functioning 
+		below on the canvas in line style. It seems to be acting as a resolution 
+		for the canvas. Not sure if canvas properties itself, or 
+		Possibly due to the fact that the canvas was made full screen 
+		by the "onLoad" script at the top of this page.-->
+		<textarea id="bioSubmitBox" style="resize: none; visibility:hidden; position:absolute; left:10px; top:10px; width:400px; height:400px">Enter your superhero's bio here!</textarea> 
+		<canvas id="main" width="1920px" height="1080px"></canvas>
+	</body>
+
+</html>
