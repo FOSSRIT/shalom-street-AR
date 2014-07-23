@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title id='title'>Toy Building App</title>
+
+		<script>
+			respondToSizingMessage = function(e) {
+			    // e.data is the string sent by the origin with postMessage.
+			    var message = e.data.split(':');
+			    if(message[1] == 'size?') {
+			    	e.source.postMessage(message[0] + ':size:' + document.body.scrollHeight + 'px', '*');
+			    }
+			}
+			// we have to listen for 'message'
+			window.addEventListener('message', respondToSizingMessage, false);
+		</script>
+
+		<style>
+		</style>
+	</head>
+
+
+
+	<!--Main app-->
+	<body>
+		<p>
+			This text is being loaded from a separate content window.  Here we check to make sure they scale correctly and resize correctly.
+		</p>
+
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum tempor tellus sed suscipit. Maecenas volutpat diam at tincidunt sagittis. Sed porta feugiat viverra. Curabitur fermentum risus eu libero imperdiet tristique. Quisque non pulvinar nisl, id pretium elit. Ut feugiat venenatis massa, eu facilisis libero tempor facilisis. Vivamus quis ornare mi. Nam quis lobortis arcu, sed sollicitudin lacus. Suspendisse venenatis mauris nibh, vehicula egestas lacus porta et. In a nisl nec nulla molestie auctor vitae non ante. Aliquam et nisl elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam gravida tellus et dui venenatis viverra. Nam sit amet nibh ut libero condimentum sagittis. Curabitur sodales dolor vestibulum lectus accumsan hendrerit. Suspendisse sagittis viverra est, sed fringilla nisl pellentesque id.
+		</p>
+
+		<img src="images/default2.jpg" />
+
+	</body>
+
+</html>

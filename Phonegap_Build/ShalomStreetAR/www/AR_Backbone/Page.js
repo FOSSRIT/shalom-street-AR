@@ -36,8 +36,7 @@ function Page(parent, templates, json){
 
 
 		_addContent("Data/2014-2015/myContent.html", "0");
-		_addContent("Data/2014-2015/myContent.html", "1");
-		_addContent("Data/2014-2015/myContent.html", "2");
+		_addContent("Data/2014-2015/myContent2.html", "1");
 
 
 		var back_button = DomWrapper(inner_parent.getDom().getElementsByClassName("back_tag")[0]);

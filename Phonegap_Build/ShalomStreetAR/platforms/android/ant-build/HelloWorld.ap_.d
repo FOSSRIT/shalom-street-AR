@@ -41,7 +41,11 @@ C:\Users\shumw_000\Documents\Shalom Street\AR\Phonegap_Build\ShalomStreetAR\plat
 C:\Users\shumw_000\Documents\Shalom Street\AR\Phonegap_Build\ShalomStreetAR\platforms\android\assets\www\css\Styles\base.css \
 C:\Users\shumw_000\Documents\Shalom Street\AR\Phonegap_Build\ShalomStreetAR\platforms\android\assets\www\Data\2014-2015 \
 C:\Users\shumw_000\Documents\Shalom Street\AR\Phonegap_Build\ShalomStreetAR\platforms\android\assets\www\Data\2014-2015.js \
+C:\Users\shumw_000\Documents\Shalom Street\AR\Phonegap_Build\ShalomStreetAR\platforms\android\assets\www\Data\2014-2015\images \
 C:\Users\shumw_000\Documents\Shalom Street\AR\Phonegap_Build\ShalomStreetAR\platforms\android\assets\www\Data\2014-2015\myContent.html \
+C:\Users\shumw_000\Documents\Shalom Street\AR\Phonegap_Build\ShalomStreetAR\platforms\android\assets\www\Data\2014-2015\myContent2.html \
+C:\Users\shumw_000\Documents\Shalom Street\AR\Phonegap_Build\ShalomStreetAR\platforms\android\assets\www\Data\2014-2015\images\default.jpg \
+C:\Users\shumw_000\Documents\Shalom Street\AR\Phonegap_Build\ShalomStreetAR\platforms\android\assets\www\Data\2014-2015\images\default2.jpg \
 C:\Users\shumw_000\Documents\Shalom Street\AR\Phonegap_Build\ShalomStreetAR\platforms\android\assets\www\img\logo.png \
 C:\Users\shumw_000\Documents\Shalom Street\AR\Phonegap_Build\ShalomStreetAR\platforms\android\assets\www\js\index.js \
 C:\Users\shumw_000\Documents\Shalom Street\AR\Phonegap_Build\ShalomStreetAR\platforms\android\assets\www\Modex.js\base \
