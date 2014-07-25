@@ -5,7 +5,7 @@ function Browser(_info){
 	var info = _info
 
 	var containers = [];
-	var camera = AR();
+	var camera = ARView();
 
 
 	function _init(){	
@@ -28,9 +28,15 @@ function Browser(_info){
 
 	Touch.DOMCollisions(toReturn, _info.main);
 	base.addEvent("click_camera", function(_clipBoard) {
+		alert('click');
 		camera.takePicture(function(result) {
-			alert(result);
+			alert("Here's what I found: ");
+			for (var r in result) {
+				alert(r);
+			}
 		});
+
+		_clipBoard.ToFire = [];
 		/*var pictureSource = navigator.camera.PictureSourceType;
 	    var destinationType = navigator.camera.DestinationType;
 

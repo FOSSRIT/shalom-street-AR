@@ -28,6 +28,9 @@ function Menu(parent, templates){
  		camera.addEvent("mousedown", function(_clipBoard){
  			_clipBoard.ToFire = ["click_camera"];
  		}, false);
+ 		camera.addEvent("click_camera", function(_clipBoard){
+ 			_clipBoard.ToFire = [];
+ 		}, false);
 		
 
  		//For each section
