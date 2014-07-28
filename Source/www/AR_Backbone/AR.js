@@ -1,4 +1,4 @@
-function ARView(){
+function ARView(info){
 	//AR is not a module and I'm not going to make it into a module.
 	var toReturn = {};
 	var detector = new AR.Detector();
@@ -11,22 +11,21 @@ function ARView(){
 	    var destinationType = navigator.camera.DestinationType;
 
 	    var result = 0;
-		navigator.camera.getPicture(_onSuccess , _onError, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+		navigator.camera.getPicture(_onSuccess , _onError, { quality: 30, destinationType: Camera.DestinationType.FILE_URI, correctOrientation: true, targetWidth: 400 });
 
-		function _onError(message) { alert('hi error'); };
+		function _onError(message) { alert('No trigger found'); };
 		function _onSuccess(pic) {  
-			alert('got url');
 			//Render to internal canvas.
 			var image = document.createElement('image');
 			image.src = pic;
-			alert(pic);
 			image.onload = function(){
-				alert('image loaded');
+
 				canvas.width = image.width;
 				canvas.height = image.height;
 				var context = canvas.getContext('2d');
 				context.drawImage(image, 0, 0, canvas.width, canvas.height)
 				var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+				//info.main.appendChild(canvas);  For debug purposes.
 				//Detect markers.
 				var markers = detector.detect(imageData);
 				alert(markers);

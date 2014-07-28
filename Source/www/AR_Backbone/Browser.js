@@ -5,7 +5,7 @@ function Browser(_info){
 	var info = _info
 
 	var containers = [];
-	var camera = ARView();
+	var camera = ARView(info);
 
 
 	function _init(){	
@@ -28,15 +28,26 @@ function Browser(_info){
 
 	Touch.DOMCollisions(toReturn, _info.main);
 	base.addEvent("click_camera", function(_clipBoard) {
-		alert('click');
 		camera.takePicture(function(result) {
-			alert("Here's what I found: ");
+			var found = 0;
 			for (var r in result) {
-				alert(r);
+				//If we've found a result that hasn't been unlocked yet
+				if(info.years[info.currentYear].unlocked[result[r]] != "true") {
+					//If we haven't unlocked it yet.
+					found++;
+					info.years[info.currentYear].unlocked[result[r]] = "true";
+					window.localStorage[info.currentYear+"."+result[r]] = "true";
+				}
+
+				if(found != 0) {
+					alert("Unlocked new content: " +result[r]);
+				} else {
+					alert("Could not find any unlockables");
+				}
 			}
 		});
 
-		_clipBoard.ToFire = [];
+		_clipBoard.BlockEvents = ["click_camera"];
 		/*var pictureSource = navigator.camera.PictureSourceType;
 	    var destinationType = navigator.camera.DestinationType;
 
@@ -51,7 +62,6 @@ function Browser(_info){
 	base.addEvent("content_selected", function(_clipBoard){
 		(base.changeState("Viewer", info))(_clipBoard);
 	}, false);
-
 
 	//
 	toReturn.init = _init;

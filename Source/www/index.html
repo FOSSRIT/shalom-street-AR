@@ -77,6 +77,7 @@
                 initialize: function() {
                     this.bindEvents();
 
+
                 },
                 // Bind Event Listeners
                 //
@@ -99,12 +100,27 @@
                     //make our app's main repository of information.
                     var info = {}
 
+
                     //Pass in our templates.
                     info.templates = {};
                     info.templates.menu_item_template = document.getElementById("menu_item_template");
                     info.templates.menu_template = document.getElementById("menu_template");
                     info.templates.viewer_template = document.getElementById("viewer_template");
                     info.templates.viewer_content_template = document.getElementById("viewer_content_template");
+
+                    //Load in any existing data using local storage.
+                    var storage = window.localStorage;
+                    //For each year.
+                    info.currentYear = 0
+                    for(var year = 0; year < 1; year++) {
+                        info.years = [];
+                        info.years[year] = {"unlocked":[]}; //Make a new year object to place info in.
+                        for(var i = 0; i < 1025; i++) { //For each possible trigger.
+                            if(storage != undefined){
+                                info.years[year].unlocked[i] = storage[year+"."+i];
+                            }
+                        }
+                    }
 
                     //Main
                     info.main = document.getElementById("main");
@@ -153,8 +169,22 @@
         <canvas id="tempNeed" width="100px" height="100px" style="display:none;"></canvas>
         <div id="main">
 
-        <!--<iframe id="me" src="Data/2014-2015/myContent.html" onLoad="resizeIFrame('me')"></iframe>-->
-            
+        <!--<div id="menu_template" class="menu">
+               
+                <div class="title">
+                    <div class="title_tag">A title will go here.</div> 
+                    <div class="camera_tag"></div>
+                </div>
+
+                 <div id="menu_item_template" class="menu_item">
+                    <div class="section">
+                        <div class = "unlocked_tag"></div>
+                        <div class="title_tag">Section Title Goes Here</div>
+                    </div>
+
+                </div>
+
+            </div>-->
 
         </div>
 
@@ -176,6 +206,7 @@
                 <!-- Menu Items -->
                 <div id="menu_item_template" class="menu_item">
                     <div class="section">
+                        <div class = "unlocked_tag"></div>
                         <div class="title_tag">Section Title Goes Here</div>
                     </div>
                     <!--<div></div> Maybe not show sections?  Maybe just tell the percent of that section you've unlocked?-->

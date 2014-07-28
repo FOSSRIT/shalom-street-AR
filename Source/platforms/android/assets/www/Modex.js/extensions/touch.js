@@ -256,10 +256,12 @@ var Touch = function(){
 					var _add = function(mouseEvent){
 						if(mouseEvent.ToFire){
 							for(var f in mouseEvent.ToFire) {
-								var e = mouseEvent.ToFire[f];
-								mouseEvent.ToFire.splice(f); //Remove event to stop recursive fire bug.
-								module.handleEvent(e, mouseEvent);
-								mouseEvent.ToFire.push(e);//Add back on so other modules can catch it.
+								if(!mouseEvent.BlockEvents || mouseEvent.BlockEvents.indexof(f) == -1) {
+									var e = mouseEvent.ToFire[f];
+									mouseEvent.ToFire.splice(f); //Remove event to stop recursive fire bug.
+									module.handleEvent(e, mouseEvent);
+									mouseEvent.ToFire.push(e);//Add back on so other modules can catch it.
+								}
 							}
 						}
 					}

@@ -1,34 +1,68 @@
-body {
+html, body {
+	margin:0px;
+	padding:0px;
 	overflow-right:hidden;
 	overflow-left:hidden;
+	height:100%;
+	background-color:black;
+
+	/*Android fixes*/
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+	-webkit-tap-highlight-color: transparent;  // i.e. Nexus5/Chrome and Kindle Fire HD 7''
+}
+
+* {
+	box-sizing: border-box;
 }
 
 /*
 BROWSER
 */
 
+#main {
+	height:100%;
+	width:100%;
+	border-radius: 5%;
+}
+
 .menu {
-	width:500px;
-	height:700px;
+	width:98%;
+	min-height:98%;
 	background-color:green;
+	margin:1%;
 }
 
 .menu .title {
+	box-sizing: border-box;
 	width:100%;
+	padding:10%;
 	height:100px;
 	background-color:gray;
+	margin-bottom:10px;
+	box-shadow:0px 0px 10px black;
 }
 
 .menu .title .title_tag {
-	float:left;
+
+	position:absolute;
+	top:0px;
+	left:0px;
+	margin:20px;
+	/*float:left;*/
 	font-size:15pt;
 }
 
 .menu .title .camera_tag {
-	float:right;
-	width:150px;
-	height:150px;
-	background-color:red;
+	/*float:right;*/
+	position:absolute;
+	width:10%;
+	padding:10%;
+	top:0px;
+	right:0px;
+	background-color:rgb(250, 200, 200);
+	box-shadow: 0px 0px 10px black;
+	border-radius:100%;
+	margin:2%;
 }
 
 .menu_item {
@@ -36,6 +70,10 @@ BROWSER
 	height:100px;
 	background-color:yellow;
 	margin:2px;
+}
+
+.menu_item {
+	height:;
 }
 
 /*

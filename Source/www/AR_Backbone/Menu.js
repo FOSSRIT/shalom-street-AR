@@ -1,4 +1,4 @@
-function Menu(parent, templates){
+function Menu(parent, templates, unlocked){
 	var base = Module(0, 0, 0, 0);
 	var toReturn = base.interface;
 	toReturn.type = "Menu";
@@ -35,8 +35,9 @@ function Menu(parent, templates){
 
  		//For each section
  		for(var s in data.sections){
+ 			_addSection(data.sections[s]);
 	 		for(var j in data.sections[s].unlockables){
-	 			_addSection();
+	 			
 	 		}
 	 	}
 
@@ -51,7 +52,9 @@ function Menu(parent, templates){
 		base.addModule(element);
 		inner_parent.getDom().appendChild(element.getDom());
 		Touch.DOMCollisions(element, element.getDom());
-		element.addEvent("mousedown", function(_clipBoard){ _clipBoard.ToFire = ["content_selected"]}, false);
+		element.addEvent("mousedown", function(_clipBoard){ 
+			_clipBoard.ToFire = ["content_selected"]
+		}, false);
 		//element.getDom().innerHTML = title;
 	}
 
