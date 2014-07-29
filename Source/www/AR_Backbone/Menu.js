@@ -62,14 +62,16 @@ function Menu(parent, templates, unlocked){
 
 
 		element.linkTo = []; //What content we're going to load when clicked.
-		element.unlocked = false;
+		element.unlocked = 0;
 
 		//If the element is unlocked.
+		element.total = 0;
 		for (var s in data.unlockables) {
+			element.total += 1;
 			//If the section is unlocked.
 			var unlockable = data.unlockables[s];
 			if(unlocked[unlockable.id]){
-				element.unlocked = true;
+				element.unlocked += 1;
 				element.linkTo.push(unlockable.url);
 			}
 		}
@@ -81,6 +83,14 @@ function Menu(parent, templates, unlocked){
 				_clipBoard.unlocked = element.unlocked;
 			}, false);
 		})(element);
+
+		if(element.unlocked == 0){
+			element.getDom().className += " item_locked";
+		} else if (element.unlocked == element.total){
+			element.getDom().className += " item_unlocked";
+		} else {
+			element.getDom().className += " item_partial";
+		}
 	}
 
 	return toReturn;

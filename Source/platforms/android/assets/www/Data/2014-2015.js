@@ -29,6 +29,19 @@ jsonLoader.result = {
 		},
 
 		//Add more of your sections here...
+
+		"Section 2": {
+			"unlockables": {
+				"UnlockMe": {
+					"id": 30,
+					"url": "Data/2014-2015/myContent.html",
+				},
+				"UnlockMe2": {
+					"id": 40,
+					"url": "Data/2014-2015/myContent.html",
+				},
+			},
+		},
 	},
 
 };
