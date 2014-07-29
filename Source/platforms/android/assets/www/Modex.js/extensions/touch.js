@@ -256,7 +256,7 @@ var Touch = function(){
 					var _add = function(mouseEvent){
 						if(mouseEvent.ToFire){
 							for(var f in mouseEvent.ToFire) {
-								if(!mouseEvent.BlockEvents || mouseEvent.BlockEvents.indexof(f) == -1) {
+								if(!mouseEvent.BlockEvents || mouseEvent.BlockEvents.indexOf(f) == -1) {
 									var e = mouseEvent.ToFire[f];
 									mouseEvent.ToFire.splice(f); //Remove event to stop recursive fire bug.
 									module.handleEvent(e, mouseEvent);

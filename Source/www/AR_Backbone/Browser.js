@@ -10,7 +10,7 @@ function Browser(_info){
 
 	function _init(){	
 
-		var menu = Menu(_info.main, _info.templates, {});//Menu(_info.main, _info.templates);
+		var menu = Menu(_info.main, _info.templates, info.years[info.currentYear].unlocked);//Menu(_info.main, _info.templates);
 		base.addModule(menu);
 	}
 
@@ -38,12 +38,13 @@ function Browser(_info){
 					info.years[info.currentYear].unlocked[result[r]] = "true";
 					window.localStorage[info.currentYear+"."+result[r]] = "true";
 				}
+			}
 
-				if(found != 0) {
-					alert("Unlocked new content: " +result[r]);
-				} else {
-					alert("Could not find any unlockables");
-				}
+			//If nothing was found.
+			if(found != 0) {
+				alert("Unlocked new content: " +result[r]);
+			} else {
+				alert("Could not find any unlockables");
 			}
 		});
 
@@ -60,7 +61,14 @@ function Browser(_info){
 	}, false);
 
 	base.addEvent("content_selected", function(_clipBoard){
-		(base.changeState("Viewer", info))(_clipBoard);
+		_clipBoard.BlockEvents = ["content_selected"];
+		if(_clipBoard.unlocked) {
+			alert('selected content');
+			info.currentContent = _clipBoard.linkTo;
+			(base.changeState("Viewer", info))(_clipBoard);
+		} else {
+			alert('nothing here is unlocked yet');
+		}
 	}, false);
 
 	//

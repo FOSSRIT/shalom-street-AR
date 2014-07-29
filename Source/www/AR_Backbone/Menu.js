@@ -18,7 +18,7 @@ function Menu(parent, templates, unlocked){
 
 
  		//-------------Fill out upper title area--------------------------
- 		var elementsThing = (inner_parent.getDom()).getElementsByClassName("title_tag")[0].innerHTML = data.title;
+ 		//var elementsThing = (inner_parent.getDom()).getElementsByClassName("title_tag")[0].innerHTML = data.title;
  		//Set camera.
  		var camera = DomWrapper(inner_parent.getDom().getElementsByClassName("camera_tag")[0]);
  		base.addModule(camera);
@@ -34,14 +34,20 @@ function Menu(parent, templates, unlocked){
 		
 
  		//For each section
- 		for(var s in data.sections){
+ 		for(var s in data.sections) {
  			_addSection(data.sections[s]);
+
 	 		for(var j in data.sections[s].unlockables){
 	 			
 	 		}
 	 	}
 
  		base.setRemove(function(){ parent.removeChild(inner_parent.getDom()); });
+ 	}
+
+ 	toReturn.refresh = function(){
+ 		 parent.removeChild(inner_parent.getDom());
+ 		 _init(data);
  	}
 
 
@@ -52,10 +58,29 @@ function Menu(parent, templates, unlocked){
 		base.addModule(element);
 		inner_parent.getDom().appendChild(element.getDom());
 		Touch.DOMCollisions(element, element.getDom());
-		element.addEvent("mousedown", function(_clipBoard){ 
-			_clipBoard.ToFire = ["content_selected"]
-		}, false);
-		//element.getDom().innerHTML = title;
+
+
+
+		element.linkTo = []; //What content we're going to load when clicked.
+		element.unlocked = false;
+
+		//If the element is unlocked.
+		for (var s in data.unlockables) {
+			//If the section is unlocked.
+			var unlockable = data.unlockables[s];
+			if(unlocked[unlockable.id]){
+				element.unlocked = true;
+				element.linkTo.push(unlockable.url);
+			}
+		}
+
+		(function(element) { 
+			element.addEvent("mousedown", function(_clipBoard){ 
+				_clipBoard.ToFire = ["content_selected"]
+				_clipBoard.linkTo = element.linkTo;
+				_clipBoard.unlocked = element.unlocked;
+			}, false);
+		})(element);
 	}
 
 	return toReturn;

@@ -1,4 +1,4 @@
-function Page(parent, templates, json){
+function Page(parent, templates, json, info){
 	var base = State(0, 0, 0, 0);
 	var toReturn = base.interface; //
 	toReturn.type = "Page";
@@ -35,8 +35,10 @@ function Page(parent, templates, json){
 		Touch.DOMCollisions(inner_parent, inner_parent.getDom());
 
 
-		_addContent("Data/2014-2015/myContent.html", "0");
-		_addContent("Data/2014-2015/myContent2.html", "1");
+		//Grab all of the content we need to display.
+		for(var i = 0; i < info.currentContent.length; i++){
+			_addContent(info.currentContent[i], i)
+		}
 
 
 		var back_button = DomWrapper(inner_parent.getDom().getElementsByClassName("back_tag")[0]);

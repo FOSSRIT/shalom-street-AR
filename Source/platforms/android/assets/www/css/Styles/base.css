@@ -36,20 +36,36 @@ BROWSER
 	box-sizing: border-box;
 	width:100%;
 	padding:10%;
-	height:100px;
-	background-color:gray;
+	/*height:100px;*/
+	background-color:rgb(200, 220, 200);
 	margin-bottom:10px;
 	box-shadow:0px 0px 10px black;
 }
 
-.menu .title .title_tag {
+.menu .title .images {
 
 	position:absolute;
 	top:0px;
 	left:0px;
-	margin:20px;
+	margin:2%;
+	width:60%;
 	/*float:left;*/
 	font-size:15pt;
+}
+
+
+.menu .title .images .main_logo{
+	width:30%;
+}
+
+
+.menu .title .images .secondary_logo{
+	width:100%;
+}
+
+.menu .title .images .secondary {
+	float:right;
+	width:50%;
 }
 
 .menu .title .camera_tag {

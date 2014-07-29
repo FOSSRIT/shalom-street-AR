@@ -10,7 +10,7 @@ function Viewer(_info){
 	*/
 
 	//Propogate based on what info you're passed in.
-	var page = Page(_info.main, _info.templates, {});
+	var page = Page(_info.main, _info.templates, {}, _info);
 	base.addModule(page);
 
 	//base.addEvent("mousedown", function(_clipBoard){ console.log('hello'); }, false);
