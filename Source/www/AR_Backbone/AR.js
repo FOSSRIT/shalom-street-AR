@@ -28,7 +28,6 @@ function ARView(info){
 				//info.main.appendChild(canvas);  For debug purposes.
 				//Detect markers.
 				var markers = detector.detect(imageData);
-				alert(markers);
 				var result = [];
 				for (var r in markers){
 					result.push(markers[r].id);

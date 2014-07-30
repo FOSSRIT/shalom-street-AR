@@ -261,6 +261,8 @@ var Touch = function(){
 									mouseEvent.ToFire.splice(f); //Remove event to stop recursive fire bug.
 									module.handleEvent(e, mouseEvent);
 									mouseEvent.ToFire.push(e);//Add back on so other modules can catch it.
+								} else {
+									mouseEvent.ToFire.splice(f); //Block and remove blocked events.
 								}
 							}
 						}

@@ -4,8 +4,9 @@ function Menu(parent, templates, unlocked){
 	toReturn.type = "Menu";
 
 
+	var data;
 	jsonLoader.Load("Data/2014-2015.js", function(result){
-		var data = jsonBuilder.GetJson(base, result);
+		data = jsonBuilder.GetJson(base, result);
 		_init(data);	
 	});
 
