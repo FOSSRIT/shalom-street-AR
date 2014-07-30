@@ -33,11 +33,11 @@ jsonLoader.result = {
 		"Section 2": {
 			"unlockables": {
 				"UnlockMe": {
-					"id": 30,
+					"id": 60,
 					"url": "Data/2014-2015/myContent.html",
 				},
 				"UnlockMe2": {
-					"id": 40,
+					"id": 80,
 					"url": "Data/2014-2015/myContent.html",
 				},
 			},
