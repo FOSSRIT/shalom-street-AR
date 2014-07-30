@@ -8,7 +8,7 @@ jsonLoader.result = {
 
 		//The name of a section can be anything you like.
 		//Sections mark divisions within the content viewer
-		"Cave" : {
+		"Construction" : {
 			
 			//Do not change this name.
 			"unlockables": {
@@ -30,15 +30,11 @@ jsonLoader.result = {
 
 		//Add more of your sections here...
 
-		"Section 2": {
+		"The Cave of Maccabees": {
 			"unlockables": {
 				"UnlockMe": {
-					"id": 60,
-					"url": "Data/2014-2015/myContent.html",
-				},
-				"UnlockMe2": {
-					"id": 80,
-					"url": "Data/2014-2015/myContent.html",
+					"id": 9,
+					"url": "Data/2014-2015/Cave_of_Maccabbees.html",
 				},
 			},
 		},
