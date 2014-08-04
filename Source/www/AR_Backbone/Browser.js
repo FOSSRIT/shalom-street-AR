@@ -78,7 +78,7 @@ function Browser(_info){
 			info.currentContent = _clipBoard.linkTo;
 			(base.changeState("Viewer", info))(_clipBoard);
 		} else {
-			alert('nothing here is unlocked yet');
+			alert("This content hasn't been unlocked yet.");
 		}
 	}, false);
 
