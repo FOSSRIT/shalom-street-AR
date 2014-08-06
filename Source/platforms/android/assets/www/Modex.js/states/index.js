@@ -2,7 +2,6 @@
 //Allows us to load one script in index instead of each part individually.
 //Allows further modularization of the engine.
 [
-  _modPath + '/states/currentState.js',
   _modPath + '/states/state.js',
   _modPath + '/states/stateManager.js'
 ].forEach(function(src) {

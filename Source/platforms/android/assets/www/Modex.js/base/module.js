@@ -22,7 +22,7 @@ function Module(_x, _y, _width, _height){
 		/*
 		"Event": {call:array of functions to call, bubble:is this function going to be passed down?},
 		*/
-	};
+	}; 
 
 	//-----------INTERNAL VARIABLES------------------------
 
@@ -69,8 +69,11 @@ function Module(_x, _y, _width, _height){
 
 	function _handleEvent(_eventString, _clipBoard) {
 
+
 		//If the event isn't blocked.  And if you're not set to block all events.
-		if((!toReturn.clipBoard.BlockEvents || toReturn.clipBoard.BlockEvents.indexOf(_eventString) !=-1) && toReturn.interface.recieveEvents) {
+		if((!_clipBoard.BlockEvents || _clipBoard.BlockEvents.indexOf(_eventString) !=-1) && toReturn.interface.recieveEvents) {
+
+
 			//If the event exists.
 			if(toReturn.events[_eventString]) {
 
@@ -78,13 +81,17 @@ function Module(_x, _y, _width, _height){
 				//Those functions can be anywhere, but they're mostly going to be internal.
 				//Before we run them, we want to update our internal clipboard so they have access to it.
 				for(var i=0; i<toReturn.events[_eventString].call.length; i++) {
-					//Call functions.
 
-					//FOR POSTERITY:  If you're utalizing this part of the code - ie, calling a custom function
-					//and then passing down events on your own, you should probably set bubble to false.
-					//You can handle passing the event down and managing the clipboard in all likelyhood - bubble is mostly for automation's sake.
-					toReturn.events[_eventString].call[i].call(this, _clipBoard);
+					//If the event isn't blocked.  And if you're not set to block all events.
+					if((!_clipBoard.BlockEvents || _clipBoard.BlockEvents.indexOf(_eventString) !=-1) && toReturn.interface.recieveEvents) {
+						//Call functions.
 
+						//FOR POSTERITY:  If you're utalizing this part of the code - ie, calling a custom function
+						//and then passing down events on your own, you should probably set bubble to false.
+						//You can handle passing the event down and managing the clipboard in all likelyhood - bubble is mostly for automation's sake.
+						toReturn.events[_eventString].call[i].call(this, _clipBoard);
+
+					}
 				}
 			}
 
@@ -96,6 +103,7 @@ function Module(_x, _y, _width, _height){
 				}
 			}
 
+
 			//Bubbling events.
 			if( //This might be able to be shortened.
 				//If we're set to auto bubble and either the event doesn't exist or is set to bubble.
@@ -104,6 +112,7 @@ function Module(_x, _y, _width, _height){
 				//If the event exists and is set to bubble downward.
 				(toReturn.events[_eventString] && toReturn.events[_eventString].bubble)) 
 			{
+
 
 				//Pass the event on.
 				var fireList = _clipBoard.ToFire || [];
@@ -157,7 +166,7 @@ function Module(_x, _y, _width, _height){
 						if(toReturn.contents[j] != _returnFrom){ //Not the same module.
 
 							//Fire off if not blocked.
-							if(!toReturn.clipBoard.BlockEvents || toReturn.clipBoard.BlockEvents.indexOf(_toFire[i]) != -1){
+							if(!_clipBoard.BlockEvents || _clipBoard.BlockEvents.indexOf(_toFire[i]) != -1){
 								toReturn.contents[j].handleEvent(_toFire[i], _clipBoard);
 							}
 						}

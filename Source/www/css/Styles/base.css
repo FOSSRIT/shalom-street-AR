@@ -76,10 +76,11 @@ BROWSER
 	padding:10%;
 	top:0px;
 	right:0px;
-	background-color:rgb(260, 200, 200);
 	box-shadow: 0px 0px 10px black;
 	border-radius:100%;
 	margin:2%;
+	background-image: "../img/shutter_icon.png";
+	background-size: 100% auto;
 }
 
 .menu_item {
@@ -89,6 +90,7 @@ BROWSER
 	margin:2px;
 	background-color:gray;
 	box-shadow: 0px 0px 10px black;
+	margin-bottom:1%;
 }
 
 .menu_item .unlocked_tag {
@@ -98,7 +100,10 @@ BROWSER
 	width:7%;
 	padding:7%;
 	border-radius:100%;
-	background-color:gray;
+	background-color:rgb(200, 200, 255);
+	border-style:solid;
+	border-color:black;
+	border-width:2px;
 }
 
 .menu_item .title_tag {

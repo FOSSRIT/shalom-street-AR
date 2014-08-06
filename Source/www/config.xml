@@ -9,10 +9,10 @@
     <name>HelloWorld</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Use the Shalom Street Augmented Reality camera app to take pictures of hidden triggers all over the museum.  When you find a trigger, you'll unlock additional content and information about the exhibits.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
+    <author href="http://www.jccdet.org/children-teens-a-families/shalom-street" email="shalomstreet@gmail.com">
         PhoneGap Team
     </author>
 

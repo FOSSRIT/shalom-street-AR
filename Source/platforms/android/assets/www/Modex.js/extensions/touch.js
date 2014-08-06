@@ -55,39 +55,39 @@ var Touch = function(){
 
 
 				for(var j=0; j<module.contents.length; j++) {
-					//Only click on visible modules.
-					if(module.contents[j].visible) {
-						//Collision detection
 
-						/*if(_clipBoard.eventType == "mousedown") {
-								alert(_clipBoard.mousex + " " + _clipBoard.mousey);
-							}*/
+					//If the event isn't blocked.
+					if(!_clipBoard.BlockEvents || _clipBoard.BlockEvents.indexOf(_clipBoard.eventType) == -1) {
+						//Only click on visible modules.
+						if(module.contents[j].visible) {
+							//Collision detection
 
-						//--------------------------------------------------------------------------------------------
-						if(_clipBoard.mousex > module.contents[j].bounds.x &&
-							_clipBoard.mousex < module.contents[j].bounds.x + module.contents[j].bounds.width &&
-							_clipBoard.mousey > module.contents[j].bounds.y &&
-							_clipBoard.mousey < module.contents[j].bounds.y + module.contents[j].bounds.height) {
-						//------------------------------------------------------------------------------------------
-							
+							//--------------------------------------------------------------------------------------------
+							if(_clipBoard.mousex > module.contents[j].bounds.x &&
+								_clipBoard.mousex < module.contents[j].bounds.x + module.contents[j].bounds.width &&
+								_clipBoard.mousey > module.contents[j].bounds.y &&
+								_clipBoard.mousey < module.contents[j].bounds.y + module.contents[j].bounds.height) {
+							//------------------------------------------------------------------------------------------
+								
 
-							//Link to the outer world.
-							var prevMousex = _clipBoard.mousex;
-							var prevMousey = _clipBoard.mousey;
-							//
-							_clipBoard.prevMousex = prevMousex;
-							_clipBoard.prevMousey = prevMousey;
-							//Update stuff.
-							_clipBoard.mousex -= module.contents[j].bounds.x;
-							_clipBoard.mousey -= module.contents[j].bounds.y;
+								//Link to the outer world.
+								var prevMousex = _clipBoard.mousex;
+								var prevMousey = _clipBoard.mousey;
+								//
+								_clipBoard.prevMousex = prevMousex;
+								_clipBoard.prevMousey = prevMousey;
+								//Update stuff.
+								_clipBoard.mousex -= module.contents[j].bounds.x;
+								_clipBoard.mousey -= module.contents[j].bounds.y;
 
-							//Pass down the function.
-							module.contents[j].handleEvent(_clipBoard.eventType, _clipBoard);
-							//Handle toFire
-							_finalToFire = module.handleToFire(module.contents[j], _finalToFire, _clipBoard);
-							//Fix the clipboard so that the process can be repeated.
-							_clipBoard.mousex = prevMousex;
-							_clipBoard.mousey = prevMousey;
+								//Pass down the function.
+								module.contents[j].handleEvent(_clipBoard.eventType, _clipBoard);
+								//Handle toFire
+								_finalToFire = module.handleToFire(module.contents[j], _finalToFire, _clipBoard);
+								//Fix the clipboard so that the process can be repeated.
+								_clipBoard.mousex = prevMousex;
+								_clipBoard.mousey = prevMousey;
+							}
 						}
 					}
 				}
@@ -112,26 +112,30 @@ var Touch = function(){
 				for(var j=0; j<module.contents.length; j++) {
 
 					if(module.contents[j].visible) {
+						//Don't fire event if blocked.
+						if(!_clipBoard.BlockEvents || _clipBoard.BlockEvents.indexOf(_clipBoard.eventType) == -1) {
 
-						//Link to the outer world.
-						var prevMousex = _clipBoard.mousex;
-						var prevMousey = _clipBoard.mousey;
-						//
-						_clipBoard.prevMousex = prevMousex;
-						_clipBoard.prevMousey = prevMousey;
-						//Update stuff.
-						_clipBoard.mousex -= module.contents[j].bounds.x;
-						_clipBoard.mousey -= module.contents[j].bounds.y;
+							//Link to the outer world.
+							var prevMousex = _clipBoard.mousex;
+							var prevMousey = _clipBoard.mousey;
+							//
+							_clipBoard.prevMousex = prevMousex;
+							_clipBoard.prevMousey = prevMousey;
+							//Update stuff.
+							_clipBoard.mousex -= module.contents[j].bounds.x;
+							_clipBoard.mousey -= module.contents[j].bounds.y;
 
-						//Pass down the function.
-						module.contents[j].handleEvent(_clipBoard.eventType, _clipBoard);
+							//Pass down the function.
+							module.contents[j].handleEvent(_clipBoard.eventType, _clipBoard);
 
-						//Handle toFire
-						_finalToFire = module.handleToFire(module.contents[j], _finalToFire, _clipBoard);
+							//Handle toFire
+							_finalToFire = module.handleToFire(module.contents[j], _finalToFire, _clipBoard);
 
-						//Fix the clipboard so that the process can be repeated.
-						_clipBoard.mousex = prevMousex;
-						_clipBoard.mousey = prevMousey;
+							//Fix the clipboard so that the process can be repeated.
+							_clipBoard.mousex = prevMousex;
+							_clipBoard.mousey = prevMousey;
+
+						}
 					}
 				}
 
@@ -158,7 +162,6 @@ var Touch = function(){
 			module.mouseOffset.x = _clipBoard.mousex;
 			module.mouseOffset.y = _clipBoard.mousey;
 			module.interface.dragging = true;
-			console.log("startDrag");
 		}, false);
 		//
 		module.addEvent("mousemove", function(_clipBoard){

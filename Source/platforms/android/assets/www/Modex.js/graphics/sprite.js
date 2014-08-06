@@ -52,7 +52,8 @@ function Sprite(_x, _y, _width, _height, _imageSource, _xOrigin, _yOrigin) {
 
 	//-----------------------------PROPERTIES-------------------------------------
 
-	function _setImage(_image, setBounds, newX, newY, newWidth, newHeight) { 
+	//FireOnLoad is an optional parameter.
+	function _setImage(_image, setBounds, newX, newY, newWidth, newHeight, _fireOnLoad) { 
 		//Works with both strings and actual images.
 		if(typeof(_image) == "string" || _image == undefined) {
 			image.src = _image || _modPath + "/images/error.png"; 
@@ -60,25 +61,33 @@ function Sprite(_x, _y, _width, _height, _imageSource, _xOrigin, _yOrigin) {
 				toReturn.bounds.width = image.width;
 				toReturn.bounds.height = image.height;
 			}
-			if(newX){
-				toReturn.bounds.x = newX;
-			}
-			if(newY){
-				toReturn.bounds.y = newY;
-			}
-			if(newWidth){
-				toReturn.bounds.width = newWidth;
-			}
-			if(newHeight){
-				toReturn.bounds.height = newHeight;
+			else
+			{
+				if(newX){
+					toReturn.bounds.x = newX;
+				}
+				if(newY){
+					toReturn.bounds.y = newY;
+				}
+				if(newWidth){
+					toReturn.bounds.width = newWidth;
+				}
+				if(newHeight){
+					toReturn.bounds.height = newHeight;
+				}
 			}
 		} else  {
 			image = _image;
-			//Add load event. If the image is loaded, fire off the load event.
-			image.onload = onImageLoad();
-			if(image.complete) {
-				onImageLoad();
-			}
+		}
+
+		//Add load event. If the image is loaded, fire off the load event.
+		image.onload = function(){
+			onImageLoad();
+			if(_fireOnLoad){ _fireOnLoad(); }
+		}
+		if(image.complete) {
+			//
+			onImageLoad();
 		}
 	}
 

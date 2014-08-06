@@ -73,9 +73,15 @@ function Manager(_canvas, _ctx, _scale) {
 
 
 	//Currently, very ineficient, but does allow for future expansion.
+	var domDrawn = []; //What dom we've drawn.
 	function _draw(){
 		//Clear the screen.
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		for(var i=0; i<domDrawn.length; i++){
+			domDrawn[i].style.display = "none";
+		}
+		domDrawn = [];
+
 		//Loop through all objects and get list of sprites from them to return.
 		var toDraw = []; //Fill this with sprites.
 		for(var i=0; i<base.contents.length; i++){ //Theoretically, we could perform some oFpperations in here if need be.
@@ -98,6 +104,7 @@ function Manager(_canvas, _ctx, _scale) {
                 data.dom.style.top = ((data.y /*- data.originY*/) / toReturn.scale) + canvas.offsetTop;
                 data.dom.style.width = data.width / toReturn.scale + "px";
                 data.dom.style.height = data.height / toReturn.scale + "px";
+              	domDrawn.push(data.dom); //We've drawn this, the next time we do a redraw, we'll erase it.
             }
 		}
 	}

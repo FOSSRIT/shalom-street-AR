@@ -62,6 +62,8 @@ function Page(parent, templates, json, info){
 		}
 	}
 
+	console.log('page created, about to init');
+
 	//Add in back button.
 	_init();
 	return toReturn;

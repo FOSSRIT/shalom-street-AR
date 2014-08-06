@@ -73,8 +73,8 @@ function Browser(_info){
 	}, false);
 
 	base.addEvent("content_selected", function(_clipBoard){
-		_clipBoard.BlockEvents = ["content_selected"];
 		if(_clipBoard.unlocked) {
+			console.log("launching content");
 			info.currentContent = _clipBoard.linkTo;
 			(base.changeState("Viewer", info))(_clipBoard);
 		} else {
