@@ -49,14 +49,18 @@ BROWSER
 	top:0px;
 	left:0px;
 	margin:2%;
-	width:60%;
+	width:70%;
 	/*float:left;*/
 	font-size:15pt;
 }
 
 
 .menu .title .images .main_logo{
-	width:30%;
+	width:25%;
+}
+
+.menu .title .images .shalom_logo{
+	width:40%;
 }
 
 
@@ -66,7 +70,7 @@ BROWSER
 
 .menu .title .images .secondary {
 	float:right;
-	width:50%;
+	width:30%;
 }
 
 .menu .title .camera_tag {
@@ -79,8 +83,16 @@ BROWSER
 	box-shadow: 0px 0px 10px black;
 	border-radius:100%;
 	margin:2%;
-	background-image: "../img/shutter_icon.png";
 	background-size: 100% auto;
+	overflow: hidden;
+}
+
+.menu .title .camera_tag img{
+	width:100%;
+	position: absolute;
+	margin-left:-50%;
+	margin-top:-50%;
+	border-radius:100%;
 }
 
 .menu_item {
@@ -106,8 +118,19 @@ BROWSER
 	border-width:2px;
 }
 
+.menu_item .unlocked_tag .unlocked_amount_tag {
+	font-size:300%;
+	position:absolute;
+	margin-top:-2%;
+	margin-left:-2%;
+
+}
+
 .menu_item .title_tag {
 	float:left;
+	font-size:200%;
+	margin-left:3%;
+	margin-top:4%;
 }
 
 .item_locked {
@@ -143,12 +166,15 @@ VIEWER
 	width:100%;
 	padding:10%;
 	background-color:rgb(150, 230, 150);
+	font-size:250%;
+	text-align: center;
 }
 
 .navigation .back_tag {
 	float:right;
 	background-color:red;
 	width: 20%;
+
 }
 
 

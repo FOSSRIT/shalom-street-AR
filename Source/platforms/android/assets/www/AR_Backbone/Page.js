@@ -40,12 +40,13 @@ function Page(parent, templates, json, info){
 			_addContent(info.currentContent[i], i)
 		}
 
-
+		/*
 		var back_button = DomWrapper(inner_parent.getDom().getElementsByClassName("back_tag")[0]);
 		var home_button = DomWrapper(inner_parent.getDom().getElementsByClassName("home_tag")[0]);
 
 		var forward_button = DomWrapper(inner_parent.getDom().getElementsByClassName("forward_tag")[0]);
-
+		*/
+		
 		base.setRemove(function(){ console.log('removing'); parent.removeChild(inner_parent.getDom()); });
 
 	}

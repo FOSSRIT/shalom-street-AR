@@ -249,7 +249,7 @@ var Touch = function(){
 					//Mark this function as being added.
 					dom.addedDomCollisions[events[e]].push({"dom":dom, "func":_add, "bubbleParam":true});
 					dom.addEventListener(events[e], _add, true);
-					module.addEvent(events[e], undefined, false);
+					module.addEvent(events[e], function(_clipBoard){ }, false);
 				})(e);
 
 

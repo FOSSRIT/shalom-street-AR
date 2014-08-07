@@ -36,7 +36,7 @@ function Menu(parent, templates, unlocked){
 
  		//For each section
  		for(var s in data.sections) {
- 			_addSection(data.sections[s]);
+ 			_addSection(data.sections[s], s);
 
 	 		for(var j in data.sections[s].unlockables){
 	 			
@@ -53,8 +53,9 @@ function Menu(parent, templates, unlocked){
 
 
 	//Adds a new section to the menu, and propogates it with other stuff.
-	function _addSection(data){
+	function _addSection(data, title){
 		var element	= DomWrapper(templates.menu_item_template.cloneNode(true));
+		element.getDom().getElementsByClassName('title_tag')[0].innerHTML = title;
 
 		base.addModule(element);
 		inner_parent.getDom().appendChild(element.getDom());
@@ -77,8 +78,12 @@ function Menu(parent, templates, unlocked){
 			}
 		}
 
+		var leftToUnlock = element.total - element.unlocked; if(leftToUnlock == 0) { leftToUnlock = '*'; }
+		element.getDom().getElementsByClassName('unlocked_amount_tag')[0].innerHTML = leftToUnlock;
+
 		(function(element) { 
 			element.addEvent("mousedown", function(_clipBoard){ 
+				console.log('register a click');
 				_clipBoard.ToFire = ["content_selected"]
 				_clipBoard.linkTo = element.linkTo;
 				_clipBoard.unlocked = element.unlocked;

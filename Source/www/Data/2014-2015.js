@@ -18,7 +18,7 @@ jsonLoader.result = {
 					//The ID of the trigger that unlocks this content.
 					"id": 0,
 					//The URL of the HTML page or section it unlocks.
-					"url": "Data/2014-2015/myContent.html",
+					"url": "Data/2014-2015/Cave_of_Maccabbees.html",
 				},
 
 				"Unlock 2": {

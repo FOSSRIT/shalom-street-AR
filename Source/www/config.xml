@@ -22,6 +22,10 @@
     -->
     <feature name="http://api.phonegap.com/1.0/device" />
 
+
+    <!--<access origin="http://www.myjewishlearning.com/holidays/Jewish_Holidays/Hanukkah/History/Maccabean_Revolt.shtml" />-->
+    <access origin="*" />
+
     <!--
         If you do not want any permissions to be added to your app, add the
         following tag to your config.xml; you will still have the INTERNET
