@@ -36,6 +36,10 @@ jsonLoader.result = {
 					"id": 9,
 					"url": "Data/2014-2015/Cave_of_Maccabbees.html",
 				},
+				"Maccabean Revolt": {
+					"id": 10,
+					"url":"Data/2014-2015/Maccabean_Revolt.html",
+				}
 			},
 		},
 	},
