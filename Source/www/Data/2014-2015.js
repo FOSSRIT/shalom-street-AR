@@ -42,6 +42,14 @@ jsonLoader.result = {
 				},
 			},
 		},
+		"Driedal": {
+			"unlockables": {
+				"Driedal History": {
+					"id": 11,
+					"url": "Data/2014-2015/The Origin Of The Driedal.html",
+				},
+			},
+		},
 	},
 
 };

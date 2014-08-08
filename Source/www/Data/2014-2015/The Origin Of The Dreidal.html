@@ -1,0 +1,120 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title id='title'>The Origin of the Dreidel</title>
+
+		<script>
+			respondToSizingMessage = function(e) {
+			    // e.data is the string sent by the origin with postMessage.
+			    var message = e.data.split(':');
+			    if(message[1] == 'size?') {
+			    	e.source.postMessage(message[0] + ':size:' + document.body.scrollHeight + 'px', '*');
+			    }
+			}
+			// we have to listen for 'message'
+			window.addEventListener('message', respondToSizingMessage, false);
+		</script>
+
+		<style>
+		/*We can use these styles to make sure all our content looks the same.*/
+			* {
+				margin:2%;
+
+			}
+			html, body {
+				background-color:rgb(220,220,250);
+				font-size:15pt;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			img {
+				max-width:100%;
+				border-radius:20px;
+				display:block;
+				margin-left:auto;
+				margin-right:auto;;
+				box-shadow: 0px 0px 5px black;
+			}
+
+			p {
+				padding:15px;
+				padding-top:15px;
+				padding-bottom:15px;
+				background-color:white;
+				box-shadow: 0px 0px 5px black;
+				border-radius:20px;
+			}
+
+			.left {
+				float:left;
+			}
+
+			.right {
+				float:right;
+			}
+		</style>
+	</head>
+
+
+
+	<!--Main app-->
+	<body>
+
+			<img src="images/Across The Board.png"/>
+			<div align="center">
+				<h1>
+					The Origin of the Dreidel
+				</h1>
+			</div>
+
+		<p>
+			
+			<i>MyJewishLearning.com</i>
+			<br></br>
+			Reprinted with permission of the author from A Different Light: 
+			The Hanukkah Book of Celebrationpublished by the Shalom Hartman Institute and Devora Publishing.
+			<br> </br>
+			Most of the laws of Hanukkah are related to the lighting of the menorah or hanukkiyah ;
+			however, in this article we shall describe some of the customs of Hanukkah.
+			The main difference between laws and customs is that laws stem 
+			from rabbinic interpretations of the Torah and Talmud which then filter down to the Jewish people, 
+			while customs usually start with the people and filter up to the rabbis. 
+			Through customs, the Jewish people have shown their love for God and tradition and immeasurably enriched all aspects of Jewish observance.
+		</p>
+		<p> 
+			The dreidel or sevivon is perhaps the most famous custom associated with Hanukkah. 
+			Indeed, various rabbis have tried to find an integral connection between the dreidel and the Hanukkah story; 
+			<br></br>
+			The standard explanation is that the letters nun, gimmel, hey, shin, which appear on the dreidel in the Diaspora,stand for nes gadol haya sham
+			--"a great miracle happened there,"while in Israel the dreidel says nun, gimmel, hey, pey,which means "a great miracle happened here."
+			<br></br>
+			One 19th century rabbi maintained that Jews played with the dreidel in order to fool the Greeks if they were caught studying Torah, 
+			which had been outlawed. Others figured out elaborate gematriot[numerological explanations based on the fact that every Hebrew letter has a 
+			numerical equivalent] and word plays for the letters nun, gimmel, hey, shin. For example, nun, gimmel, hey, shin in gematria equals 358, 
+			which is also the numerical equivalent of mashiach or Messiah!
+			<br></br>
+			Finally, the letters nun, gimmel, hey, shin are supposed to represent the four kingdoms which tried to destroy us [in ancient times]: 
+			N = Nebuchadnetzar = Babylon; H = Haman = Persia = Madai; G = Gog = Greece; and S = Seir = Rome.
+		</p>
+		<p>
+			As a matter of fact, all of these elaborate explanations were invented after the fact.
+			The dreidel game originally had nothing to do with Hanukkah; it has been played by various people in various languages for many centuries.
+			<br></br>	
+			In England and Ireland there is a game called totum or teetotum that is especially popular at Christmastime. 
+			In English, this game is first mentioned as "totum" ca. 1500-1520. The name comes from the Latin "totum," which means "all." 
+			By 1720, the game was called T- totum or teetotum, and by 1801 the four letters already represented four words in English: 
+			T = Take all; H = Half; P = Put down; and N = Nothing.
+			Our Eastern European game of dreidel (including the letters nun, gimmel, hey, shin) is directly based on the German equivalent of the totum game
+			: N = Nichts = nothing; G = Ganz = all; H = Halb = half; and S = Stell ein = put in. 
+			<br></br>
+			In German, the spinning top was called a "torrel" or "trundl," and in Yiddish it was called a "dreidel," a "fargl," a "varfl" 
+			[= something thrown], "shtel ein" [= put in], and "gor, gorin" [= all].
+			<br></br>
+			When Hebrew was revived as a spoken language, the dreidel was called, among other names, asevivon, which is the one that caught on.
+			Thus the dreidel game represents an irony of Jewish history. In order to celebrate the holiday of Hanukkah, which celebrates our victory over 
+			cultural assimilation, we play the dreidel game, which is an excellent example of cultural assimilation! 
+			Of course, there is a world of difference between imitating non-Jewish games and worshipping idols, but the irony remains nonetheless.
+		</p>
+	</body>
+
+</html>
