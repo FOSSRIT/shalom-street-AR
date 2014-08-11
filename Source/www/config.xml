@@ -3,10 +3,10 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.helloworld"
+        id        = "com.phonegap.ShalomStreetARCompanion"
         version   = "1.0.0">
 
-    <name>HelloWorld</name>
+    <name>Shalom Street AR Companion</name>
 
     <description>
         Use the Shalom Street Augmented Reality camera app to take pictures of hidden triggers all over the museum.  When you find a trigger, you'll unlock additional content and information about the exhibits.
