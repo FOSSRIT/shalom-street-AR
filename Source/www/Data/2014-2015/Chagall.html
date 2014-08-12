@@ -1,0 +1,141 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title id='title'>Marc Chagall</title>
+
+		<script>
+			respondToSizingMessage = function(e) {
+			    // e.data is the string sent by the origin with postMessage.
+			    var message = e.data.split(':');
+			    if(message[1] == 'size?') {
+			    	e.source.postMessage(message[0] + ':size:' + document.body.scrollHeight + 'px', '*');
+			    }
+			}
+			// we have to listen for 'message'
+			window.addEventListener('message', respondToSizingMessage, false);
+		</script>
+
+		<style>
+		/*We can use these styles to make sure all our content looks the same.*/
+			* {
+				margin:2%;
+
+			}
+			table,th,td {
+				border:1px solid black;
+				border-collapse:collapse;
+				}
+			th, td {
+				padding:5px;
+			}
+			html, body {
+				background-color:rgb(220,220,250);
+				font-size:15pt;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			img {
+				max-width:100%;
+				border-radius:20px;
+				display:block;
+				margin-left:auto;
+				margin-right:auto;;
+				box-shadow: 0px 0px 5px black;
+			}
+
+			p {
+				padding:15px;
+				padding-top:15px;
+				padding-bottom:15px;
+				background-color:white;
+				box-shadow: 0px 0px 5px black;
+				border-radius:20px;
+			}
+
+			.left {
+				float:left;
+			}
+
+			.right {
+				float:right;
+			}
+		</style>
+	</head>
+
+
+
+	<!--Main app-->
+	<body>
+
+			<img src="images/Across The Board.png"/>
+			<div align="center">
+				<h1>
+					Marc Chagall
+				</h1>
+			</div>
+		<img src="images/Chagall/Marc.png"/>
+		<p>
+			
+			<i>Wikipedia.org</i><br></br>
+			Marc Zakharovich Chagall was a Belarussian-Russian-French artist.Art critic Robert Hughes referred to Chagall as 
+			"the quintessential Jewish artist of the twentieth century" (though Chagall saw his work as "not the dream of one people but of all humanity"). 
+			An early modernist, he was associated with several major artistic styles and created works in virtually every artistic medium, 
+			including painting, book illustrations, stained glass, stage sets, ceramic, tapestries and fine art prints.
+			<br> </br>
+			According to art historian Michael J. Lewis, Chagall was considered to be "the last survivor of the first generation of European modernists". 
+			For decades, he "had also been respected as the world's preeminent Jewish artist". Using the medium of stained glass, 
+			he produced windows for the cathedrals of Reims and Metz, windows for the UN, and the Jerusalem Windows in Israel. 
+			He also did large-scale paintings, including part of the ceiling of the Paris Opéra.
+			<br> </br>
+			Before World War I, he traveled between St. Petersburg, Paris, and Berlin. During this period he created his own mixture and style of 
+			modern art based on his idea of Eastern European Jewish folk culture. He spent the wartime years in Soviet Belarus, 
+			becoming one of the country's most distinguished artists and a member of the modernist avant-garde, founding the Vitebsk Arts College 
+			before leaving again for Paris in 1922.
+			<br></br>
+			He had two basic reputations, writes Lewis: as a pioneer of modernism and as a major Jewish artist. 
+			He experienced modernism's "golden age" in Paris, where "he synthesized the art forms of Cubism, Symbolism, and Fauvism, 
+			and the influence of Fauvism gave rise to Surrealism". Yet throughout these phases of his style "he remained most emphatically a Jewish artist, 
+			whose work was one long dreamy reverie of life in his native village of Vitebsk.""When Matisse dies," Pablo Picasso remarked in the 1950s, 
+			"Chagall will be the only painter left who understands what colour really is"
+	</p>
+	<img src="images/Chagall/UN.jpg"/>
+	<p>
+		Marc Chagall was born Moishe Segal in a Jewish family in Liozna, near the city of Vitebsk 
+		(Belarus, then part of the Russian Empire) in 1887. At the time of his birth, Vitebsk's population was about 66,000, 
+		with half the population being Jewish. A picturesque city of churches and synagogues, it was called "Russian Toledo", 
+		after a cosmopolitan city of the former Spanish Empire. As the city was built mostly of wood, little of it survived years of 
+		occupation and destruction during World War II
+		<br></br>
+		Chagall was the eldest of nine children. The family name, Shagal, is a variant of the name Segal, which in a Jewish community was usually borne 
+		by a Levitic family. His father, Khatskl (Zachar) Shagal, was employed by a herring merchant, and his mother, Feige-Ite, sold groceries 
+		from their home. His father worked hard, carrying heavy barrels but earning only 20 roubles each month. 
+		Chagall would later include fish motifs "out of respect for his father", writes Chagall biographer, Jacob Baal-Teshuva. 
+		Chagall wrote of these early years: 
+		<br></br><i>
+			Day after day, winter and summer, at six o'clock in the morning, 
+			my father got up and went off to the synagogue. There he said his usual prayer for some dead man or other. 
+			On his return he made ready the samovar, drank some tea and went to work. Hellish work, the work of a galley-slave. 
+			Why try to hide it? How tell about it? No word will ever ease my father's lot... 
+			There was always plenty of butter and cheese on our table. Buttered bread, like an eternal symbol, was never out of my childish hands. 
+		<br></br></i>
+		One of the main sources of income of the Jewish population of the town was from the manufacture of clothing that was sold throughout Russia. 
+		They also made furniture and various agricultural tools. From the late 18th century to the First World War, 
+		the Russian government confined Jews to living within the Pale of Settlement, which included modern Ukraine, Belarus, Poland, Lithuania, and Latvia, 
+		almost exactly corresponding to the territory of the Polish-Lithuanian Commonwealth recently taken over by Imperial Russia. 
+		This caused the creation of Jewish market-villages (shtetls) throughout today's Eastern Europe, 
+		with their own markets, schools, hospitals, and other community institutions.
+		<br></br>
+		Most of what is known about Chagall's early life has come from his autobiography, My Life. 
+		In it, he described the major influence that the culture of Hasidic Judaism had on his life as an artist. 
+		Vitebsk itself had been a center of that culture dating from the 1730s with its teachings derived from the Kabbalah. 
+		Chagall scholar Susan Goodman describes the links and sources of his art to his early home:
+		<br></br><i>
+		Chagall's art can be understood as the response to a situation that has long marked the history of Russian Jews. 
+		Though they were cultural innovators who made important contributions to the broader society, 
+		Jews were considered outsiders in a frequently hostile society... Chagall himself was born of a family steeped in religious life; 
+		his parents were observant Hasidic Jews who found spiritual satisfaction in a life defined by their faith and organized by prayer.
+		<br></br></i>
+		Chagall formed a relationship with Sholom Dovber Schneerson, and later with Menachem M. Schneerson.
+	</p>	
+	</body>
+</html>

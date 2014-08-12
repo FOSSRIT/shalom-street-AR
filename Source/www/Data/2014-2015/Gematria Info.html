@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title id='title'>Gematria</title>
+
+		<script>
+			respondToSizingMessage = function(e) {
+			    // e.data is the string sent by the origin with postMessage.
+			    var message = e.data.split(':');
+			    if(message[1] == 'size?') {
+			    	e.source.postMessage(message[0] + ':size:' + document.body.scrollHeight + 'px', '*');
+			    }
+			}
+			// we have to listen for 'message'
+			window.addEventListener('message', respondToSizingMessage, false);
+		</script>
+
+		<style>
+		/*We can use these styles to make sure all our content looks the same.*/
+			* {
+				margin:2%;
+
+			}
+			html, body {
+				background-color:rgb(220,220,250);
+				font-size:15pt;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			img {
+				max-width:100%;
+				border-radius:20px;
+				display:block;
+				margin-left:auto;
+				margin-right:auto;;
+				box-shadow: 0px 0px 5px black;
+			}
+
+			p {
+				padding:15px;
+				padding-top:15px;
+				padding-bottom:15px;
+				background-color:white;
+				box-shadow: 0px 0px 5px black;
+				border-radius:20px;
+			}
+
+			.left {
+				float:left;
+			}
+
+			.right {
+				float:right;
+			}
+		</style>
+	</head>
+
+
+
+	<!--Main app-->
+	<body>
+
+			<img src="images/Across The Board.png"/>
+			<div align="center">
+				<h1>
+					Gematria
+				</h1>
+			</div>
+			<p>
+				<i>Wikipedia.org</i>
+				<br></br>
+				Gematria is an Assyro-Babylonian system of numerology later adopted by Jews that assigns numerical value to a word or phrase in the 
+				belief that words or phrases with identical numerical values bear some relation to each other or bear some relation to the number itself 
+				as it may apply to a person's age, the calendar year, or the like. The best-known example of Gematria is the Hebrew word Chai ("alive"), 
+				which is composed of two letters that (using the assignments in the Mispar gadol table shown below) add up to 18. This has made 18 
+				a "lucky number" among Jews, and gifts in multiples of 18 are very popular.
+			</p>
+			<p>
+				Some identify two forms of gematria: the "revealed" form, which is prevalent in many hermeneutic methods found throughout Rabbinic 
+				literature, and the "mystical" form, a largely Kabbalistic practice.
+				<br></br>
+				Though gematria is most often used to calculate the values of individual words, psukim (Biblical verses), 
+				Talmudical aphorisms, sentences from the standard Jewish prayers, personal, angelic and Godly names, and other 
+				religiously significant material, Kabbalists use them often for arbitrary phrases and, occasionally, for various languages. 
+				A few instances of gematria in Arabic, Spanish and Greek, spelled with the Hebrew letters, are mentioned in the works of 
+				Rabbi Abraham Abulafia; some Hasidic Rabbis also used it, though rarely, for Yiddish. However, the primary language for 
+				gematria calculations has always been and remains Hebrew and, to a lesser degree, Aramaic.
+				<br></br>
+				A classic Biblical commentary incorporating gematria is Baal ha-Turim by Rabbi Jacob ben Asher.
+				Gematria is often used by the Maharal of Prague and hasidic Torah commentators (such as the "Sefath Emmeth" from Gur).
+			</p>
+			
+	</body>
+
+</html>

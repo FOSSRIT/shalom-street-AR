@@ -1,0 +1,174 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title id='title'>Blessings</title>
+
+		<script>
+			respondToSizingMessage = function(e) {
+			    // e.data is the string sent by the origin with postMessage.
+			    var message = e.data.split(':');
+			    if(message[1] == 'size?') {
+			    	e.source.postMessage(message[0] + ':size:' + document.body.scrollHeight + 'px', '*');
+			    }
+			}
+			// we have to listen for 'message'
+			window.addEventListener('message', respondToSizingMessage, false);
+		</script>
+
+		<style>
+		/*We can use these styles to make sure all our content looks the same.*/
+			* {
+				margin:2%;
+
+			}
+			html, body {
+				background-color:rgb(220,220,250);
+				font-size:15pt;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			img {
+				max-width:100%;
+				border-radius:20px;
+				display:block;
+				margin-left:auto;
+				margin-right:auto;;
+				box-shadow: 0px 0px 5px black;
+			}
+
+			p {
+				padding:15px;
+				padding-top:15px;
+				padding-bottom:15px;
+				background-color:white;
+				box-shadow: 0px 0px 5px black;
+				border-radius:20px;
+			}
+
+			.left {
+				float:left;
+			}
+
+			.right {
+				float:right;
+			}
+		</style>
+	</head>
+
+
+
+	<!--Main app-->
+	<body>
+
+			<img src="images/Across The Board.png"/>
+			<div align="center">
+				<h1>
+					Blessings
+				</h1>
+			</div>
+			
+		<p>
+		<i>MyJewishLearning.com</i>
+			<table style="width:500px">
+					<tr>
+					  <th>Bread</th>
+					  <th>Wine & Grape Juice</th>		
+					  <th>Fruit</th>
+					  <th>Vegetables</th>
+					  <th>Miscellaneous Foods</th>
+					</tr>
+					<tr>
+					  <td><img src="images/Kosher/Blessings/Bread.jpg"/></td>
+					  <td><img src="images/Kosher/Blessings/Wine.jpg"/></td>		
+					  <td><img src="images/Kosher/Blessings/Fruit.jpg"/></td>
+					  <td><img src="images/Kosher/Blessings/Vegetables.jpg"/></td>
+					  <td><img src="images/Kosher/Blessings/Misc.jpg"/></td>
+					</tr>
+					<tr>
+					  <td><i>Barukh ata Adonai Eloheinu melekh ha'olam hamotzi lehem min ha'aretz.</i></td>
+					  <td><i>Barukh ata Adonai Eloheinu melekh ha'olam borei p'ri hagafen</i></td>		
+					  <td><i>Barukh ata Adonai Eloheinu melekh ha'olam borei p'ri ha'eitz.</i></td>
+					  <td><i>Barukh ata Adonai Eloheinu melekh ha'olam borei p'ri ha'adamah.</i></td>
+					  <td><i>Barukh ata Adonai Eloheinu melekh ha'olam borei minei mezonot.</i></td>
+					</tr> 
+					<tr>
+					  <td>Blessed are You, Lord our God, Ruler of the universe, 
+							who brings forth bread from the earth.</td>
+					  <td>Blessed are You, Lord our God, Ruler of the universe, 
+							who creates the fruit of the tree.</td>		
+					  <td>Blessed are You, Lord our God, Ruler of the universe,
+							who creates the fruit of the ground.</td>
+					  <td>Blessed are You, Lord our God, Ruler of the universe, 
+							who creates varieties of nourishment.</td>
+					  <td>Blessed are You, Lord our God, Ruler of the universe, 
+					  at whose word all came to be.</td>
+					</tr>
+					<tr>
+					  <td>אב</td>
+					  <td>Av</td>		
+					  <td>5</td>
+					  <td>30 days</td>
+					  <td>July-August</td>
+					</tr>
+					<tr>
+					  <td>אלול</td>
+					  <td>Elul</td>		
+					  <td>6</td>
+					  <td>29 days</td>
+					  <td>August-September</td>
+					</tr>
+					<tr>
+					  <td>תשרי</td>
+					  <td>Tishri</td>		
+					  <td>7</td>
+					  <td>30 days</td>
+					  <td>September-October</td>
+					</tr>
+					<tr>
+					  <td>חשון</td>
+					  <td>Cheshvan</td>		
+					  <td>8</td>
+					  <td>29 or 30 days</td>
+					  <td>October-November</td>
+					</tr>
+					<tr>
+					  <td>כסלו</td>
+					  <td>Kislev</td>		
+					  <td>9</td>
+					  <td>30 or 29 days</td>
+					  <td>November-December</td>
+					</tr>
+					<tr>
+					  <td>טבת</td>
+					  <td>Tevet</td>		
+					  <td>10</td>
+					  <td>29 days</td>
+					  <td>December-January</td>
+					</tr>
+					<tr>
+					  <td>שבת</td>
+					  <td>Shevat</td>		
+					  <td>11</td>
+					  <td>30 days</td>
+					  <td>January-February</td>
+					</tr>
+					<tr>
+					  <td>אדר א</td>
+					  <td>Adat I (In leap years only)</td>		
+					  <td>12</td>
+					  <td>30 days</td>
+					  <td>February-March</td>
+					</tr>
+					<tr>
+					  <td>אדר ב</td>
+					  <td>Adar (called Adar Beit in leap years)</td>		
+					  <td>12 (13 in leap years)</td>
+					  <td>29 days</td>
+					  <td>February-March</td>
+					</tr>
+					
+			</table>	
+		</p>
+	</body>
+
+</html>

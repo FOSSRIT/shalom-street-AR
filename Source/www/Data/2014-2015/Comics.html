@@ -1,0 +1,135 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title id='title'>Comics</title>
+
+		<script>
+			respondToSizingMessage = function(e) {
+			    // e.data is the string sent by the origin with postMessage.
+			    var message = e.data.split(':');
+			    if(message[1] == 'size?') {
+			    	e.source.postMessage(message[0] + ':size:' + document.body.scrollHeight + 'px', '*');
+			    }
+			}
+			// we have to listen for 'message'
+			window.addEventListener('message', respondToSizingMessage, false);
+		</script>
+
+		<style>
+		/*We can use these styles to make sure all our content looks the same.*/
+			* {
+				margin:2%;
+
+			}
+			html, body {
+				background-color:rgb(220,220,250);
+				font-size:15pt;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			img {
+				max-width:100%;
+				border-radius:20px;
+				display:block;
+				margin-left:auto;
+				margin-right:auto;;
+				box-shadow: 0px 0px 5px black;
+			}
+
+			p {
+				padding:15px;
+				padding-top:15px;
+				padding-bottom:15px;
+				background-color:white;
+				box-shadow: 0px 0px 5px black;
+				border-radius:20px;
+			}
+
+			.left {
+				float:left;
+			}
+
+			.right {
+				float:right;
+			}
+		</style>
+	</head>
+
+
+
+	<!--Main app-->
+	<body>
+
+			<img src="images/Across The Board.png"/>
+			<div align="center">
+				<h1>
+					Comics
+				</h1>
+			</div>
+			<p><i>ReformJudaismMag.net</i></p>
+			<h3>The Golden Age?</h3>
+		<p>
+			The period roughly from 1933 to 1955 is regarded by comics historians as the "Golden Age" because it was the "first wave" of new talent, 
+			an era when classic comic-book characters such as Superman, Batman, and Captain America were created, as was the graphic language of 
+			contemporary comics. "Today you call it the Golden Age," laughs Eisner. "Well, for those of us that were in the Golden Age, 
+			we didn't know it. It was the Leaden Age as far as we were concerned!" Indeed, most of the comic-book artists and writers of this era 
+			never emerged from poverty. They were underpaid wage slaves with no rights or royalties; the characters they created were owned and trademarked 
+			by the comic-book publishers. Even Siegel and Shuster, creators of the world's first comic-book superhero, were bilked, earning a 
+			paltry $130 from Harry Donenfeld for the first thirteen-page Superman story and having to negotiate for meager financial and creative
+			participation in subsequent Superman strips and spin-offs (all Superman licensing fees were paid to Donenfeld's corporation, "Superman, Inc.").
+			<br></br>
+			The turning point for Superman's creators came in 1978--exactly forty years after Superman's first release. 
+			During a TV talk-show promotion of the first Superman movie, an elderly gentleman rose from the audience and said in a soft voice: 
+			"My name is Jerry Siegel. I co-created the character Superman on which they're making this movie, and I work at a supermarket bagging groceries." 
+			The studio audience gasped. So did Jerry Robinson (a cartoonist, comic-book historian, and at that time the head of the National Cartoonists 
+			Society), who was watching the show from home.
+			<br></br>
+			Robinson decided to launch a campaign aimed at Warner Brothers, which, as the parent company of DC Comics, owned the Superman copyright. 
+			He wanted the media giant to compensate Siegel and Shuster for having created one of the most widely recognized characters on earth. 
+			It would take many players, hundreds of arts organizations, and considerable legal maneuvering before the studio bowed to the pressure. 
+			The inventors of Superman received a "created by" credit in the movie, and an annual stipend which continued for the rest of their lives. 
+			Today, when a movie or TV series (not to mention comic book) is released featuring Superman, it bears the credit line: 
+			"Created by Jerry Siegel and Joe Shuster," ensuring that future generations will know the genesis of the Man of Steel.
+		</p>
+		<img src="images/Comics/Reform Judaism.jpg"/>
+		<h3>The Golem And Superman </h3>
+		<p> 
+			Conceived by Siegel and Shuster while they were still in high school, Superman became the first comic-book character to cross over to virtually 
+			every medium--novels (George Lowther's The Adventures of Superman, illustrated by Joe Shuster and published in 1942, featured the first 
+			comic-book hero to appear in a novel), radio plays, television programs (including the current WB hit drama Smallville, 
+			a postmodern look at Superman's early life in quintessential small-town America), theater (Harold Prince's 1966 Broadway musical It's A Bird, 
+			It's A Plane, It's Superman), feature films, movie serials, animated short subjects, newspaper comic strips, Internet comics, 
+			even popular music (in the rapper Eminem's 2002 song entitled "Superman," he compares himself to the Man of Steel).
+			<br></br>
+			The idea of Superman occurred to Jerry Siegel one hot summer night in 1933. The teenager had trouble falling asleep. 
+			While lying in bed, he thought, "if only I could fly..." and began to envision a character who could fly--a character who was stronger, 
+			more courageous, more invincible than he could ever be. Excited, Jerry hurried to his desk and wrote out in comic strip form the first Superman 
+			story; then early the next morning he rushed over to the home of his artist friend Joe Shuster to share his idea. 
+			Equally inspired, Joe immediately began to draw a prototype of the character. Thus was a hero born.
+			<br></br>
+			Superman actualized the adolescent power fantasies of its creators--two Jewish Depression kids craving a muscle-bound redeemer to 
+			liberate them from the social and economic impoverishment of their lives. And, as Michael Chabon (author of the Pulitzer Prize-winning novel 
+			The Amazing Adventures of Kavalier and Clay, about two Siegel and Shuster-style cartoonists) notes, there's a parallel between Kavalier and 
+			Clay's superhero creations and the Golem--the legendary creature magically conceived by the rabbi of medieval Prague to defend the 
+			community from an invasion by its antisemitic enemies. Cartoonist, writer, and comic-book historian Will Eisner (creator of The Spirit) 
+			also views Superman as a mythic descendant of the Golem and thus a link in the chain of Jewish tradition. "[Jews needed] a hero who could 
+			protect us against an almost invincible force," Eisner says. "So [Siegel and Shuster] created an invincible hero."
+			<br></br>
+			The Superman narrative is also rich in Jewish symbolism. He is a child survivor named Kal-El 
+			(in Hebrew, "All that is God") from the planet Krypton, whose population, a race of brilliant scientists, is decimated. 
+			His parents send him to Earth in a tiny rocket ship, reminiscent of how baby Moses survived Pharaoh's decree to kill all Jewish newborn sons. 
+			In the context of the 1930s, the story also reflects the saga of the Kindertransports--the evacuation to safety of hundreds of Jewish children,
+			without their parents, from Austria, Germany, Poland, and Czechoslovakia to Great Britain.
+			<br></br>
+			Angst-ridden adolescent fans, Jewish and not, shared Siegel and Shuster's feelings of helplessness and yearned for a super-savior--a fact that 
+			was not lost on the comic-book publishers, who responded with a succession of new superhero creations, among them Wonder Man (created in May 
+			1939 by Will Eisner) and Captain Marvel (created in February 1940 by writer Otto Binder and artist C. C. Beck). In the pre-Superman era, 
+			brash, hard-boiled detectives (Ace King, Detective Dan, the aforementioned Slam Bradley) and humorous slapstick features (Curly and the Kids, 
+			Sheldon Mayer's "Scribbly") had dominated the genre. After Superman, notes former Marvel Comics publisher and Spider Man co-creator Stan Lee 
+			(Stanley Martin Lieber), "if artists wanted to be successful, they thought, 'I guess we better give our characters costumes and double 
+			identities.'" Thus, for example, Batman secretly doubled as rich playboy Bruce Wayne, The Flash as police scientist Jay Garrick, The Ray as 
+			reporter Happy Terrill, Wonder Woman as U.S. army major Diana Prince, and Captain America as police officer Steve Rogers.
+			
+	</body>
+
+</html>

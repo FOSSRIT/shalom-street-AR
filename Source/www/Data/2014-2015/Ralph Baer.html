@@ -1,0 +1,105 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title id='title'>Ralph Baer</title>
+
+		<script>
+			respondToSizingMessage = function(e) {
+			    // e.data is the string sent by the origin with postMessage.
+			    var message = e.data.split(':');
+			    if(message[1] == 'size?') {
+			    	e.source.postMessage(message[0] + ':size:' + document.body.scrollHeight + 'px', '*');
+			    }
+			}
+			// we have to listen for 'message'
+			window.addEventListener('message', respondToSizingMessage, false);
+		</script>
+
+		<style>
+		/*We can use these styles to make sure all our content looks the same.*/
+			* {
+				margin:2%;
+
+			}
+			html, body {
+				background-color:rgb(220,220,250);
+				font-size:15pt;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			img {
+				max-width:100%;
+				border-radius:20px;
+				display:block;
+				margin-left:auto;
+				margin-right:auto;;
+				box-shadow: 0px 0px 5px black;
+			}
+
+			p {
+				padding:15px;
+				padding-top:15px;
+				padding-bottom:15px;
+				background-color:white;
+				box-shadow: 0px 0px 5px black;
+				border-radius:20px;
+			}
+
+			.left {
+				float:left;
+			}
+
+			.right {
+				float:right;
+			}
+		</style>
+	</head>
+
+
+
+	<!--Main app-->
+	<body>
+
+			<img src="images/Across The Board.png"/>
+			<div align="center">
+				<h1>
+					Ralph Baer
+				</h1>
+			</div>
+			<img src="images/Video Games/Baer.jpg"/>
+			<p>
+				<i>Wikipedia.org</i>
+				<br></br>
+				Ralph Baer (born March 8, 1922) is a German-American video game pioneer, inventor, engineer, known as "The Father of Video Games",
+				who is noted for his many contributions to games and the video game industry. In 2006, he was awarded the National Medal of Technology 
+				for inventing the home console for video games and spawning the video game industry.
+			</p>
+			<p>
+				When Baer was eleven years old, he was expelled from school in Germany because of his Jewish ancestry and had to go to an all-Jewish school. 
+				His father worked in a shoe factory in Pirmasens at the time. Two months before Kristallnacht, he and his family escaped from Germany.
+				In America, he was self-taught and worked in a factory for a weekly wage of twelve dollars. He graduated from the National Radio Institute as 
+				a radio service technician in 1940. In 1943 he was drafted to fight in World War II, assigned to Military intelligence at the US Army 
+				headquarters in London.
+				<br></br>
+				Baer graduated with a Bachelor of Science degree in Television Engineering (unique at the time) from the American Television Institute of 
+				Technology in Chicago in 1949.
+				<br></br>
+				In 1949, Baer went to work as chief engineer for a small electro medical equipment firm, Wappler, Inc where he designed and built surgical 
+				cutting machines, epilators, and low frequency pulse generating muscle-toning equipment. In 1951, Baer went to work as a senior engineer for 
+				Loral Electronics in the Bronx, New York, where he designed power line carrier signaling equipment for IBM. From 1952 to 1956, he worked at 
+				Transitron, Inc., in New York City as a chief engineer and later as vice president. He started his own company before joining Sanders Associates 
+				in 1956, where he stayed until retiring in 1987.
+				<br></br>
+				Baer is best known for leading the development of the Brown Box and Magnavox Odyssey, 
+				the first home video game console and his pioneering patented work in establishing video games. 
+				He is now partnered with Bob Pelovitz of Acsiom, LLC,[15] and they have been inventing and marketing toy and game ideas since 1983.
+				In 2006, Baer donated all his hardware prototypes and documents to the Smithsonian.
+				<br></br> 
+				Baer is a Life Senior Member of Institute of Electrical and Electronics Engineers.
+			</p>
+			<img src="images/Video Games/Odyssey.jpg"/>
+			
+			
+	</body>
+
+</html>

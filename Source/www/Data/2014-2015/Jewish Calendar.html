@@ -1,0 +1,331 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title id='title'>The Jewish Calendar</title>
+
+		<script>
+			respondToSizingMessage = function(e) {
+			    // e.data is the string sent by the origin with postMessage.
+			    var message = e.data.split(':');
+			    if(message[1] == 'size?') {
+			    	e.source.postMessage(message[0] + ':size:' + document.body.scrollHeight + 'px', '*');
+			    }
+			}
+			// we have to listen for 'message'
+			window.addEventListener('message', respondToSizingMessage, false);
+		</script>
+
+		<style>
+		/*We can use these styles to make sure all our content looks the same.*/
+			* {
+				margin:2%;
+
+			}
+			table,th,td {
+				border:1px solid black;
+				border-collapse:collapse;
+				}
+			th, td {
+				padding:5px;
+			}
+			html, body {
+				background-color:rgb(220,220,250);
+				font-size:15pt;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			img {
+				max-width:100%;
+				border-radius:20px;
+				display:block;
+				margin-left:auto;
+				margin-right:auto;;
+				box-shadow: 0px 0px 5px black;
+			}
+
+			p {
+				padding:15px;
+				padding-top:15px;
+				padding-bottom:15px;
+				background-color:white;
+				box-shadow: 0px 0px 5px black;
+				border-radius:20px;
+			}
+
+			.left {
+				float:left;
+			}
+
+			.right {
+				float:right;
+			}
+		</style>
+	</head>
+
+
+
+	<!--Main app-->
+	<body>
+
+			<img src="images/Across The Board.png"/>
+			<div align="center">
+				<h1>
+					The Jewish Calendar
+				</h1>
+			</div>
+
+		<p>
+			<i>JewFAQ.org</i><br></br>
+			A few years ago, I was in a synagogue, and I overheard one man ask another, "When is Chanukkah this year?" 
+			The other man smiled slyly and replied, "Same as always: the 25th of Kislev." 
+			This humorous comment makes an important point: the date of Jewish holidays does not change from year to year. 
+			Holidays are celebrated on the same day of the Jewish calendar every year, 
+			but the Jewish year is not the same length as a solar year on the civil calendar 
+			used by most of the western world, so the date shifts on the civil calendar.			
+		</p>	
+		
+			<div align= "center"><h3>Background and History</h3></div>
+		<p>
+			The Jewish calendar is based on three astronomical phenomena: the rotation of the Earth about its axis (a day); 
+			the revolution of the moon about the Earth (a month); and the revolution of the Earth about the sun (a year). 
+			These three phenomena are independent of each other, so there is no direct correlation between them. 
+			On average, the moon revolves around the Earth in about 29½ days. 
+			The Earth revolves around the sun in about 365¼ days, that is, about 12.4 lunar months.
+			<br></br>
+			The civil calendar used by most of the world has abandoned any correlation between the moon cycles and the month, 
+			arbitrarily setting the length of months to 28, 30 or 31 days.
+			<br></br>
+			
+			The Jewish calendar, however, coordinates all three of these astronomical phenomena. 
+			Months are either 29 or 30 days, corresponding to the 29½-day lunar cycle. Years are either 12 or 13 months, 
+			corresponding to the 12.4 month solar cycle.
+			<br></br>
+			The lunar month on the Jewish calendar begins when the first sliver of moon becomes visible after the dark of the moon. 
+			In ancient times, the new months used to be determined by observation. When people observed the new moon, they would notify the Sanhedrin. 
+			When the Sanhedrin heard testimony from two independent, reliable eyewitnesses that the new moon occurred on a certain date, 
+			they would declare the rosh chodesh (first of the month) and send out messengers to tell people when the month began.
+		</p>
+		<p>
+			The problem with strictly lunar calendars is that there are approximately 12.4 lunar months in every solar year, 
+			so a 12-month lunar calendar is about 11 days shorter than a solar year and a 13-month lunar is about 19 longer than a solar year. 
+			The months drift around the seasons on such a calendar: on a 12-month lunar calendar, the month of Nissan, which is supposed to occur in the Spring,
+			would occur 11 days earlier in the season each year, eventually occurring in the Winter, the Fall, the Summer, and then the Spring again. 
+			On a 13-month lunar calendar, the same thing would happen in the other direction, and faster.
+			<br></br>
+			To compensate for this drift, the Jewish calendar uses a 12-month lunar calendar with an extra month occasionally added. 
+			The month of Nissan occurs 11 days earlier each year for two or three years, and then jumps forward 30 days, balancing out the drift. 
+			In ancient times, this month was added by observation: the Sanhedrin observed the conditions of the weather, the crops and the livestock, 
+			and if these were not sufficiently advanced to be considered "spring," then the Sanhedrin inserted an additional month into the calendar to 
+			make sure that Pesach (Passover) would occur in the spring (it is, after all, referred to in the Torah as Chag he-Aviv, the Festival of Spring!).
+			<br></br>
+			A year with 13 months is referred to in Hebrew as Shanah Me'uberet (pronounced shah-NAH meh-oo-BEH-reht), literally: 
+			a pregnant year. In English, we commonly call it a leap year. 
+			The additional month is known as Adar I, Adar Rishon (first Adar) or Adar Alef (the Hebrew letter Alef being the numeral "1" in Hebrew). 
+			The extra month is inserted before the regular month of Adar (known in such years as Adar II, Adar Sheini or Adar Beit). 
+			Note that Adar II is the "real" Adar, the one in which Purim is celebrated, the one in which yahrzeits for Adar are observed, 
+			the one in which a 13-year-old born in Adar becomes a Bar Mitzvah. Adar I is the "extra" Adar.
+		</P>
+		<p>
+			In the fourth century, Hillel II established a fixed calendar based on mathematical and astronomical calculations. 
+			This calendar, still in use, standardized the length of months and the addition of months over the course of a 19 year cycle, 
+			so that the lunar calendar realigns with the solar years. Adar I is added in the 3rd, 6th, 8th, 11th, 14th, 17th and 19th years of the cycle. 
+			The current cycle began in Jewish year 5758 (the year that began October 2, 1997). 
+			If you are musically inclined, you may find it helpful to remember this pattern of leap years by reference to the major scale: 
+			for each whole step there are two regular years and a leap year; for each half-step there is one regular year and a leap year. 
+			This is easier to understand when you examine the keyboard illustration below and see how it relates to the leap years above.
+			<img src="images/Jewish Year/Keyboard.png"/>
+		
+			In addition, Yom Kippur should not fall adjacent to Shabbat, because this would cause difficulties in coordinating the fast with Shabbat, 
+			and Hoshanah Rabbah should not fall on Saturday because it would interfere with the holiday's observances. 
+			A day is added to the month of Cheshvan or subtracted from the month of Kislev of the previous year to prevent these things from happening. 
+			This process is sometimes referred to as "fixing" Rosh Hashanah. If you are interested in the details of how these calculations are performed, 
+			see The Jewish Calendar: A Closer Look.
+			</p>
+			<div align= "center"><h3>Numbering of Jewish Years</h3></div>
+			<p>
+			The year number on the Jewish calendar represents the number of years since creation, 
+			calculated by adding up the ages of people in the Bible back to the time of creation. 
+			However, this does not necessarily mean that the universe has existed for only 5700 years 
+			as we understand years. Many Orthodox Jews will readily acknowledge that the first six 
+			"days" of creation are not necessarily 24-hour days (indeed, a 24-hour day would be 
+			meaningless until the creation of the sun on the fourth "day"). 
+			Jews do not generally use the words "A.D." and "B.C." to refer to the years on the 
+			civil calendar. "A.D." means "the year of our L-rd," and we do not believe 
+			Jesus is the L-rd. Instead, we use the abbreviations C.E. 
+			(Common or Christian Era) and B.C.E. (Before the Common Era),
+			which are commonly used by scholars today.
+			</p>
+			<div align= "center"><h3>Months of the Jewish Year</h3></div>
+			<p>
+			The "first month" of the Jewish calendar is the month of Nissan, 
+			in the spring, when Passover occurs. However, the Jewish New Year is in Tishri, 
+			the seventh month, and that is when the year number is increased. 
+			This concept of different starting points for a year is not as strange 
+			as it might seem at first glance. The American "new year" starts in January, 
+			but the new "school year" starts in September, and many businesses have 
+			"fiscal years" that start at various times of the year. Similarly, the Jewish calendar 
+			has different starting points for different purposes.
+			The names of the months of the Jewish calendar were adopted during the time of Ezra, 
+			after the return from the Babylonian exile. The names are actually Babylonian month names, 
+			brought back to Israel by the returning exiles. Note that most of the Bible refers to months 
+			by number, not by name.
+			The Jewish calendar has the following months:
+			<table style="width:300px">
+				<tr>
+				  <th>Hebrew</th>
+				  <th>English</th>		
+				  <th>Number</th>
+				  <th>Length</th>
+				  <th>Civil Equivalent</th>
+				</tr>
+				<tr>
+				  <td>ניסן</td>
+				  <td>Nissan</td>		
+				  <td>1</td>
+				  <td>30 days</td>
+				  <td>March-April</td>
+				</tr>
+				<tr>
+				  <td>אייר</td>
+				  <td>Iyar</td>		
+				  <td>2</td>
+				  <td>29 days</td>
+				  <td>April-May</td>
+				</tr>
+				<tr>
+				  <td>סיון</td>
+				  <td>Sivan</td>		
+				  <td>3</td>
+				  <td>30 days</td>
+				  <td>May-June</td>
+				</tr>
+				<tr>
+				  <td>תמוז</td>
+				  <td>Tammuz</td>		
+				  <td>4</td>
+				  <td>29 days</td>
+				  <td>March-April</td>
+				</tr>
+				<tr>
+				  <td>אב</td>
+				  <td>Av</td>		
+				  <td>5</td>
+				  <td>30 days</td>
+				  <td>July-August</td>
+				</tr>
+				<tr>
+				  <td>אלול</td>
+				  <td>Elul</td>		
+				  <td>6</td>
+				  <td>29 days</td>
+				  <td>August-September</td>
+				</tr>
+				<tr>
+				  <td>תשרי</td>
+				  <td>Tishri</td>		
+				  <td>7</td>
+				  <td>30 days</td>
+				  <td>September-October</td>
+				</tr>
+				<tr>
+				  <td>חשון</td>
+				  <td>Cheshvan</td>		
+				  <td>8</td>
+				  <td>29 or 30 days</td>
+				  <td>October-November</td>
+				</tr>
+				<tr>
+				  <td>כסלו</td>
+				  <td>Kislev</td>		
+				  <td>9</td>
+				  <td>30 or 29 days</td>
+				  <td>November-December</td>
+				</tr>
+				<tr>
+				  <td>טבת</td>
+				  <td>Tevet</td>		
+				  <td>10</td>
+				  <td>29 days</td>
+				  <td>December-January</td>
+				</tr>
+				<tr>
+				  <td>שבת</td>
+				  <td>Shevat</td>		
+				  <td>11</td>
+				  <td>30 days</td>
+				  <td>January-February</td>
+				</tr>
+				<tr>
+				  <td>אדר א</td>
+				  <td>Adat I (In leap years only)</td>		
+				  <td>12</td>
+				  <td>30 days</td>
+				  <td>February-March</td>
+				</tr>
+				<tr>
+				  <td>אדר ב</td>
+				  <td>Adar (called Adar Beit in leap years)</td>		
+				  <td>12 (13 in leap years)</td>
+				  <td>29 days</td>
+				  <td>February-March</td>
+				</tr>
+				
+				</table>
+				The length of Cheshvan and Kislev are determined by complex calculations involving the time of day 
+				of the full moon of the following year's Tishri and the day of the week that Tishri would occur 
+				in the following year. 
+				Note that the number of days between Nissan and Tishri is always the same. 
+				Because of this, the time from the first major festival (Passover in Nissan) to the last major 
+				festival (Sukkot in Tishri) is always the same.
+			</p>
+				<div align= "center"><h3>Days of the Jewish Week</h3></div>
+			<p>
+				Other than Shabbat, the name of the seventh day of the week, the Jewish calendar doesn't have names for the days of the week. 
+				The days of the week are simply known as first day, second day, third day, etc. Sometimes they are referred to more fully as 
+				First Day of the Sabbath, etc. Below is a list for those who are interested.
+
+				<table style="width:500px">
+				<tr>
+				  <th>Hebrew</th>
+				  <th>Translation</th>		
+				  <th>English</th>
+				</tr>
+				<tr>
+				  <td>יום רשון</td>
+				  <td>Yom Rishon</td>		
+				  <td>First Day (Sunday)</td>
+				</tr>
+				<tr>
+				  <td>יום שיני</td>
+				  <td>Yom Sheini</td>
+				  <td>Second Day (Monday)</td>
+				</tr>
+				<tr>
+				  <td>יום שלישי</td>
+				  <td>Yom Shlishi</td>		
+				  <td>Third Day (Tuesday)</td>
+				</tr>
+				<tr>
+				  <td>יום רביעי</td>
+				  <td>Yom R'vi'i</td>		
+				  <td>Fouth Day (Wednesday)</td>
+				</tr>
+				<tr>
+				  <td>יום חמישי</td>
+				  <td>Yom Chamishi</td>		
+				  <td>Fifth Day (Thursday)</td>
+				</tr>
+				<tr>
+				  <td>יום ששי</td>
+				  <td>Yom Shishi</td>		
+				  <td>Sixth Day (Friday)</td>
+				</tr>
+				<tr>
+				  <td>יום שבת</td>
+				  <td>Yom Shabbat</td>		
+				  <td>Sabbath Day (Saturday)</td>
+				</tr>
+			</table>
+		</p>
+	</body>
+</html>
