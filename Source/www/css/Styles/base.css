@@ -57,20 +57,27 @@ BROWSER
 
 .menu .title .images .main_logo{
 	width:25%;
+	float:left;
 }
 
 .menu .title .images .shalom_logo{
 	width:40%;
+	float:left;
 }
 
 
 .menu .title .images .secondary_logo{
-	width:100%;
+	width:80%;
 }
 
 .menu .title .images .secondary {
 	float:right;
 	width:30%;
+}
+
+.menu .title .text {
+	float:left;
+	size:60%;
 }
 
 .menu .title .camera_tag {
