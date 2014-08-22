@@ -50,6 +50,70 @@ jsonLoader.result = {
 				},
 			},
 		},
+		"Jewish Year": {
+			"unlockables": {
+				"Jewish Calendar": {
+					"id": 12,
+					"url": "Data/2014-2015/Jewish Calendar.html",
+				},
+			},
+		},
+		"Gematria": {
+			"unlockables": {
+				"The Basics of Gematria": {
+					"id": 13,
+					"url": "Data/2014-2015/Gematria PDF.html",
+				},
+				"Gematria Information": {
+					"id": 14,
+					"url": "Data/2014-2015/Gematria Info.html",
+				},
+			},
+		},
+		"Jewish Artists": {
+			"unlockables": {
+				"Chagall": {
+					"id": 15,
+					"url": "Data/2014-2015/Chagall.html",
+				},
+			},
+		},
+		"Kosher": {
+			"unlockables": {
+				"Blessings": {
+					"id": 16,
+					"url": "Data/2014-2015/Blessings.html",
+				},
+				"Kashrut": {
+					"id": 17,
+					"url": "Data/2014-2015/Kashrut.html",
+				},
+			},
+		},
+		"Comic Books": {
+			"unlockables": {
+				"Comics": {
+					"id": 18,
+					"url": "Data/2014-2015/Comics.html",
+				},
+			},
+		},
+		"Video Games": {
+			"unlockables": {
+				"Ralph Baer": {
+					"id": 19,
+					"url": "Data/2014-2015/Ralph Baer.html",
+				},
+			},
+		},
+		"Shtender": {
+			"unlockables": {
+				"Shtender": {
+					"id": 20,
+					"url": "Data/2014-2015/Shtender.html",
+				},
+			},
+		},
 	},
 
 };
