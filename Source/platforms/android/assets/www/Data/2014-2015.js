@@ -8,7 +8,7 @@ jsonLoader.result = {
 
 		//The name of a section can be anything you like.
 		//Sections mark divisions within the content viewer
-		"Construction" : {
+		/*"Construction" : {
 			
 			//Do not change this name.
 			"unlockables": {
@@ -41,7 +41,7 @@ jsonLoader.result = {
 					"url":"Data/2014-2015/Maccabean_Revolt.html",
 				},
 			},
-		},
+		},*/
 		"Driedal": {
 			"unlockables": {
 				"Driedal History": {
