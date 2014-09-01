@@ -114,7 +114,9 @@
                     info.currentYear = 0
                     for(var year = 0; year < 1; year++) {
                         info.years = [];
-                        info.years[year] = {"unlocked":[]}; //Make a new year object to place info in.
+                        info.years[year] = {"unlocked":[]}; //Make a new year object to place info in.  Always start with 1 unlocked.
+                        info.years[year].unlocked[1] = true;
+                        storage[year+".1"] = true;
                         for(var i = 0; i < 1025; i++) { //For each possible trigger.
                             if(storage != undefined){
                                 info.years[year].unlocked[i] = storage[year+"."+i];
