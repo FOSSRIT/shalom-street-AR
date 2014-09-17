@@ -37,6 +37,7 @@ function Browser(_info){
 			_clipBoard.BlockEvents = ["click_camera"];
 			camera.takePicture(function(result) {
 				var found = 0;
+				var repeat = false;
 				for (var r in result) {
 					//If we've found a result that hasn't been unlocked yet
 					if(info.years[info.currentYear].unlocked[result[r]] != "true") {
@@ -47,6 +48,7 @@ function Browser(_info){
 						console.log("found trigger " + r + ", and unlocked it.")
 					} else {
 						console.log("found trigger " + r + ", but was already unlocked.");
+						repeat = true;
 					}
 				}
 
@@ -54,7 +56,11 @@ function Browser(_info){
 				if(found != 0) {
 					alert("Unlocked new content!");
 				} else {
-					alert("Could not find any unlockables");
+					if(!repeat) {
+						alert("Could not find any unlockables");
+					} else {
+						alert("All content found was already unlocked!");
+					}
 				}
 
 				menu.refresh();
